@@ -1,0 +1,70 @@
+{
+    "name": "uvm-verfication-for-vs-code",
+    "displayName": "UVM Verfication for VS Code",
+    "description": "Snippets and syntaxe higlight for UVM",
+    "version": "0.0.1",
+    "publisher": "xiaohuyz",
+    "engines": {
+        "vscode": "^1.57.0"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "xiaohuyz",
+        "email": "xiaohuyz@163.com"
+    },
+    "categories": [
+        "Programming Languages",
+        "Snippets"
+    ],
+    "keywords": [
+        "Hardware Verification Language",
+        "SystemVerilog",
+        "UVM Verfication"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "systemverilog",
+                "aliases": [
+                    "SystemVerilog",
+                    "systemverilog"
+                ],
+                "extensions": [
+                    ".sv",
+                    ".svh"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "systemverilog",
+                "scopeName": "source.sv",
+                "path": "./syntaxes/systemverilog.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "systemverilog",
+                "path": "./snippets/sv_containers.json"
+            },
+            {
+                "language": "systemverilog",
+                "path": "./snippets/sv_language_constructs.json"
+            },
+            {
+                "language": "systemverilog",
+                "path": "./snippets/uvm_containers.json"
+            },
+            {
+                "language": "systemverilog",
+                "path": "./snippets/uvm_macros.json"
+            },
+            {
+                "language": "systemverilog",
+                "path": "./snippets/uvm_phases.json"
+            }
+            
+        ]
+    }
+}

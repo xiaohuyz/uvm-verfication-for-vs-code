@@ -1,0 +1,352 @@
+{
+    "uvm_object": {
+        "prefix": "uvm_object",
+        "context": [
+            "meta.package.systemverilog",
+            "source.systemverilog"
+        ],
+        "body": [
+            "class ${1:$TM_FILENAME_BASE} extends ${2:uvm_object};",
+            "\t`uvm_object_utils($1);\n",
+            "\tfunction new(string name = \"$1\");",
+            "\t\tsuper.new(name);",
+            "\tendfunction: new",
+            "\t$0",
+            "endclass: $1\n"
+        ],
+        "description": "UVM object class template"
+    },
+    "uvm_object_with_parameters": {
+        "prefix": "uvm_object_with_parameters",
+        "context": [
+            "meta.package.systemverilog",
+            "source.systemverilog"
+        ],
+        "body": [
+            "class ${1:$TM_FILENAME_BASE} #(${2:parameters}) extends ${3:uvm_object};",
+            "\ttypedef $1 #(${2/(\\b(parameter|type)\\s+([A-Za-z_][A-Za-z0-9_$]*)(\\s*=\\s*([A-Za-z0-9_$]+))?)*\\b/$3/g}) this_type_t;",
+            "\t`uvm_object_param_utils(this_type_t);\n",
+            "\tfunction new(string name = \"$1\");",
+            "\t\tsuper.new(name);",
+            "\tendfunction: new",
+            "\t$0",
+            "endclass: $1\n"
+        ],
+        "description": "UVM parametrized object class template"
+    },
+    "uvm_component": {
+        "prefix": "uvm_component",
+        "context": [
+            "meta.package.systemverilog",
+            "source.systemverilog"
+        ],
+        "body": [
+            "class ${1:$TM_FILENAME_BASE} extends ${2:uvm_component};",
+            "\t`uvm_component_utils($1);\n",
+            "\tfunction new(string name = \"$1\", uvm_component parent);",
+            "\t\tsuper.new(name, parent);",
+            "\tendfunction: new\n",
+            "\t$0",
+            "endclass: $1\n"
+        ],
+        "description": "UVM component class template"
+    },
+    "uvm_component_with_parameters": {
+        "prefix": "uvm_component_with_parameters",
+        "context": [
+            "meta.package.systemverilog",
+            "source.systemverilog"
+        ],
+        "body": [
+            "class ${1:$TM_FILENAME_BASE} #(${2:parameters}) extends ${3:uvm_component};",
+            "\ttypedef $1 #(${2/(\\b(parameter|type)\\s+([A-Za-z_][A-Za-z0-9_$]*)(\\s*=\\s*([A-Za-z0-9_$]+))?)*\\b/$3/g}) this_type_t;",
+            "\t`uvm_component_param_utils(this_type_t);\n",
+            "\tfunction new(string name = \"$1\", uvm_component parent);",
+            "\t\tsuper.new(name, parent);",
+            "\tendfunction: new\n",
+            "\t$0",
+            "endclass: $1\n"
+        ],
+        "description": "UVM parametrized component class template"
+    },
+    "uvm_sequence": {
+        "prefix": "uvm_sequence",
+        "context": [
+            "meta.package.systemverilog",
+            "source.systemverilog"
+        ],
+        "body": [
+            "class ${1:$TM_FILENAME_BASE} extends ${2:uvm_sequence};",
+            "\t`uvm_object_utils($1);\n",
+            "\tfunction new(string name = \"$1\");",
+            "\t\tsuper.new(name);",
+            "\tendfunction: new\n",
+            "\textern virtual task body();\n",
+            "\t$0",
+            "endclass: $1"
+        ],
+        "description": "UVM sequence class template"
+    },
+    "uvm_sequence_with_parameters": {
+        "prefix": "uvm_sequence_with_parameters",
+        "context": [
+            "meta.package.systemverilog",
+            "source.systemverilog"
+        ],
+        "body": [
+            "class ${1:$TM_FILENAME_BASE} #(${2:parameters}) extends ${3:uvm_sequence};",
+            "\ttypedef $1 #(${2/(\\b(parameter|type)\\s+([A-Za-z_][A-Za-z0-9_$]*)(\\s*=\\s*([A-Za-z0-9_$]+))?)*\\b/$3/g}) this_type_t;",
+            "\t`uvm_object_param_utils(this_type_t);\n",
+            "\tfunction new(string name = \"$1\");",
+            "\t\tsuper.new(name);",
+            "\tendfunction: new\n",
+            "\textern virtual task body();\n",
+            "\t$0",
+            "endclass: $1"
+        ],
+        "description": "UVM sequence class template with parameters"
+    },
+    "uvm_sequence_functions": {
+        "prefix": "uvm_sequence_functions",
+        "context": [
+            "meta.package.systemverilog",
+            "source.systemverilog"
+        ],
+        "body": [
+            "task $1body();",
+            "\t$0",
+            "endtask: body\n\n"
+        ],
+        "description": "UVM Sequence class functions"
+    },
+    "uvm_sequence_item": {
+        "prefix": "uvm_sequence_item",
+        "context": [
+            "meta.package.systemverilog",
+            "source.systemverilog"
+        ],
+        "body": [
+            "class ${1:$TM_FILENAME_BASE} extends ${2:uvm_sequence_item};",
+            "\t`uvm_object_utils($1);\n",
+            "\tfunction new(string name = \"$1\");",
+            "\t\tsuper.new(name);",
+            "\tendfunction: new\n",
+            "\t$0",
+            "endclass: $1\n\n"
+        ],
+        "description": "UVM sequence item class template"
+    },
+    "uvm_sequence_item_with_parameters": {
+        "prefix": "uvm_sequence_item_with_parameters",
+        "context": [
+            "meta.package.systemverilog",
+            "source.systemverilog"
+        ],
+        "body": [
+            "class ${1:$TM_FILENAME_BASE} #(${2:parameters}) extends ${3:uvm_sequence_item};",
+            "\ttypedef $1 #(${2/(\\b(parameter|type)\\s+([A-Za-z_][A-Za-z0-9_$]*)(\\s*=\\s*([A-Za-z0-9_$]+))?)*\\b/$3/g}) this_type_t;",
+            "\t`uvm_object_param_utils(this_type_t);\n",
+            "\tfunction new(string name = \"$1\");",
+            "\t\tsuper.new(name);",
+            "\tendfunction: new\n",
+            "\t$0",
+            "endclass: $1\n\n"
+        ],
+        "description": "UVM parametrized sequence item class template"
+    },
+    "uvm_sequence_item_do_copy": {
+        "prefix": "uvm_sequence_item_do_copy",
+        "context": [
+            "meta.class.systemverilog",
+            "source.systemverilog"
+        ],
+        "body": [
+            "function void ${1:$TM_FILENAME_BASE}${2:::}do_copy(uvm_object rhs);",
+            "\tthis_type_t rhs_;\n",
+            "\tif (!\\$cast(rhs_, rhs)) begin",
+            "\t\t`uvm_error({this.get_name(), \".do_copy()\"}, \"Cast failed!\");",
+            "\t\treturn;",
+            "\tend",
+            "\tsuper.do_copy(rhs);\n",
+            "endfunction: do_copy\n\n$0"
+        ],
+        "description": "UVM sequence item do_copy() stub"
+    },
+    "uvm_sequence_item_do_compare": {
+        "prefix": "uvm_sequence_item_do_compare",
+        "context": [
+            "meta.class.systemverilog",
+            "source.systemverilog"
+        ],
+        "body": [
+            "function bit ${1:$TM_FILENAME_BASE}${2:::}do_compare(uvm_object rhs, uvm_comparer comparer);",
+            "\tthis_type_t rhs_;\n",
+            "\tif (!\\$cast(rhs_, rhs)) begin",
+            "\t\t`uvm_error({this.get_name(), \".do_compare()\"}, \"Cast failed!\");",
+            "\t\treturn;",
+            "\tend",
+            "\tdo_compare = super.do_compare(rhs, comparer);\n",
+            "\tdo_compare &= (",
+            "\t);",
+            "endfunction: do_compare\n\n$0"
+        ],
+        "description": "UVM sequence item do_compare() stub"
+    },
+    "uvm_sequence_item_convert2string": {
+        "prefix": "uvm_sequence_item_convert2string",
+        "context": [
+            "meta.class.systemverilog",
+            "source.systemverilog"
+        ],
+        "body": [
+            "function string ${1:$TM_FILENAME_BASE}${2:::}convert2string();",
+            "\tstring s;\n",
+            "\ts = super.convert2string();\n",
+            "\treturn s;",
+            "endfunction: convert2string\n\n$0"
+        ],
+        "description": "UVM sequence item convert2string() stub"
+    },
+    "uvm_sequence_item_do_print": {
+        "prefix": "uvm_sequence_item_do_print",
+        "context": [
+            "meta.class.systemverilog",
+            "source.systemverilog"
+        ],
+        "body": [
+            "function void ${1:$TM_FILENAME_BASE}${2:::}do_print(uvm_printer printer)",
+            "\tsuper.do_print(printer);\n",
+            "endfunction: do_print\n\n$0"
+        ],
+        "description": "UVM sequence item do_print() stub"
+    },
+    "uvm_sequence_item_do_record": {
+        "prefix": "uvm_sequence_item_do_record",
+        "context": [
+            "meta.class.systemverilog",
+            "source.systemverilog"
+        ],
+        "body": [
+            "function void ${1:$TM_FILENAME_BASE}${2:::}do_record(uvm_recorder recorder);",
+            "\tsuper.do_record(recorder);\n",
+            "endfunction: do_record\n\n$0"
+        ],
+        "description": "UVM sequence item do_record() stub"
+    },
+    "uvm_sequence_item_do_pack": {
+        "prefix": "uvm_sequence_item_do_pack",
+        "context": [
+            "meta.class.systemverilog",
+            "source.systemverilog"
+        ],
+        "body": [
+            "function void ${1:$TM_FILENAME_BASE}${2:::}do_pack(uvm_packer packer);",
+            "\tsuper.do_pack(packer);\n",
+            "endfunction: do_pack\n\n$0"
+        ],
+        "description": "Compresses object contents into a bit format."
+    },
+    "uvm_sequence_item_do_unpack": {
+        "prefix": "uvm_sequence_item_do_unpack",
+        "context": [
+            "meta.class.systemverilog",
+            "source.systemverilog"
+        ],
+        "body": [
+            "function void ${1:$TM_FILENAME_BASE}${2:::}do_unpack(uvm_packer packer);",
+            "\tsuper.do_unpack(packer);\n",
+            "endfunction: do_unpack\n\n$0"
+        ],
+        "description": "Converts a bit format into the data object format."
+    },
+    "uvm_driver": {
+        "prefix": "uvm_driver",
+        "body": [
+            "class ${1:$TM_FILENAME_BASE} extends uvm_driver;",
+            "\t$2",
+            "\t",
+            "\t`uvm_component_utils(${1:$TM_FILENAME_BASE});\n",
+            "\tfunction new(string name = \"${1:$TM_FILENAME_BASE}\", uvm_component parent);",
+            "\t\tsuper.new(name, parent);",
+            "\tendfunction\n",
+            "\t$0",
+            "endclass"
+        ],
+        "description": "UVM driver class template"
+    },
+    "uvm_monitor": {
+        "prefix": "uvm_driver",
+        "body": [
+            "class ${1:$TM_FILENAME_BASE} extends uvm_monitor;",
+            "\t$2",
+            "\t",
+            "\t`uvm_component_utils(${1:$TM_FILENAME_BASE});\n",
+            "\tfunction new(string name = \"${1:$TM_FILENAME_BASE}\", uvm_component parent);",
+            "\t\tsuper.new(name, parent);",
+            "\tendfunction\n",
+            "\t$0",
+            "endclass"
+        ],
+        "description": "UVM monitor class template"
+    },
+    "uvm_agent": {
+        "prefix": "uvm_agent",
+        "body": [
+            "class ${1:$TM_FILENAME_BASE} extends uvm_agent;",
+            "\t$2",
+            "\t",
+            "\t`uvm_component_utils(${1:$TM_FILENAME_BASE});\n",
+            "\tfunction new(string name = \"${1:$TM_FILENAME_BASE}\", uvm_component parent);",
+            "\t\tsuper.new(name, parent);",
+            "\tendfunction\n",
+            "\t$0",
+            "endclass"
+        ],
+        "description": "UVM agent class template"
+    },
+    "uvm_sequencer": {
+        "prefix": "uvm_sequencer",
+        "body": [
+            "class ${1:$TM_FILENAME_BASE} extends uvm_sequencer;",
+            "\t$2",
+            "\t",
+            "\t`uvm_component_utils(${1:$TM_FILENAME_BASE});\n",
+            "\tfunction new(string name = \"${1:$TM_FILENAME_BASE}\", uvm_component parent);",
+            "\t\tsuper.new(name, parent);",
+            "\tendfunction\n",
+            "\t$0",
+            "endclass"
+        ],
+        "description": "UVM sequencer class template"
+    },
+    "uvm_scoreboard": {
+        "prefix": "uvm_scoreboard",
+        "body": [
+            "class ${1:$TM_FILENAME_BASE} extends uvm_scoreboard;",
+            "\t$2",
+            "\t",
+            "\t`uvm_component_utils(${1:$TM_FILENAME_BASE});\n",
+            "\tfunction new(string name = \"${1:$TM_FILENAME_BASE}\", uvm_component parent);",
+            "\t\tsuper.new(name, parent);",
+            "\tendfunction\n",
+            "\t$0",
+            "endclass"
+        ],
+        "description": "UVM scoreboard class template"
+    },
+    "uvm_env": {
+        "prefix": "uvm_env",
+        "body": [
+            "class ${1:$TM_FILENAME_BASE} extends uvm_env;",
+            "\t$2",
+            "\t",
+            "\t`uvm_component_utils(${1:$TM_FILENAME_BASE});\n",
+            "\tfunction new(string name = \"${1:$TM_FILENAME_BASE}\", uvm_component parent);",
+            "\t\tsuper.new(name, parent);",
+            "\tendfunction\n",
+            "\t$0",
+            "endclass"
+        ],
+        "description": "UVM env class template"
+    }
+}

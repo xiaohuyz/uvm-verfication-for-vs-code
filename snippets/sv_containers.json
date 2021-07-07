@@ -1,0 +1,174 @@
+{
+    "sv_module": {
+        "prefix": "sv_module",
+        "body": [
+            "module $TM_FILENAME_BASE (",
+            "\t${1}",
+            ");",
+            "\t$0\nendmodule //$TM_FILENAME_BASE"
+        ],
+        "description": "Basic SystemVerilog module construct."
+    },
+    "sv_interface": {
+        "prefix": "sv_interface",
+        "body": [
+            "interface ${1:$TM_FILENAME_BASE}",
+            "\t#(",
+            "\t\t${2:<parameter_list>}",
+            "\t)(",
+            "\t\t${3:<port_list>}",
+            "\t);\n",
+            "\t$0",
+            "endinterface: $1\n"
+        ],
+        "description": "Basic SystemVerilog interface construct."
+    },
+    "sv_package": {
+        "prefix": "sv_package",
+        "body": [
+            "package ${1:$TM_FILENAME_BASE};",
+            "\t$2\n",
+            "\t$3\n",
+            "\t$0",
+            "endpackage: $1\n"
+        ],
+        "description": "Basic SystemVerilog package construct."
+    },
+    "sv_class": {
+        "prefix": "sv_class",
+        "body": [
+            "class ${1:$TM_FILENAME_BASE};",
+            "\tfunction new(string name = \"$1\");",
+            "\tendfunction: new",
+            "\t$0\n",
+            "endclass: $1\n"
+        ],
+        "description": "SV class template"
+    },
+    "sv_typedef": {
+        "prefix": "sv_typedef",
+        "body": [
+            "typedef ${1:enum} ${2:#() }${3:<type_name>};",
+            "$0"
+        ],
+        "description": "SV Typedef construct for NaturalDocs"
+    },
+    "sv_guard_ifndef": {
+        "prefix": "sv_guard_ifndef",
+        "body": [
+            "`ifndef __${1:${TM_FILENAME/((\\w*)([\\.\\s])?)/${2:/upcase}${3:+_}/g}}",
+            "`define __$1",
+            "\n$0\n",
+            "`endif\n"
+        ],
+        "description": "Basic SystemVerilog guard ifndef-define-endif construct."
+    },
+    "sv_extern_constraint": {
+        "context": [
+            "meta.class.systemverilog"
+        ],
+        "prefix": "extern_constraint",
+        "body": [
+            "extern constraint $1;\n$0"
+        ],
+        "description": "Constraint declaration stub."
+    },
+    "sv_constraint_block": {
+        "context": [
+            "meta.class.systemverilog",
+            "source.systemverilog"
+        ],
+        "prefix": "constraint_block",
+        "body": [
+            "constraint ${1:$TM_FILENAME_BASE}${2:::}$3 {",
+            "\t$0",
+            "}\n"
+        ],
+        "description": "Constraint block template."
+    },
+    "sv_covergroup": {
+        "prefix": "sv_covergroup",
+        "body": [
+            "covergroup cg_${1:identifier} (${2:port_list}) ${3:@(coverage_event)};",
+            "\t$0",
+            "endgroup: cg_$1"
+        ],
+        "description": "Basic SystemVerilog covergroup template."
+    },
+    "sv_covergroup_options": {
+        "prefix": "sv_covergroup_options",
+        "body": [
+            "$0"
+        ],
+        "description": "Covergroup option block template."
+    },
+    "sv_covergroup_type_options": {
+        "prefix": "sv_covergroup_type_options",
+        "body": [
+            "$0"
+        ],
+        "description": "Covergroup type_options block template."
+    },
+    "sv_coverpoint": {
+        "prefix": "sv_coverpoint",
+        "body": [
+            "cp_${1:cover_point_identifier}: coverpoint ${2:covered_expression} iff (${3:1}) {",
+            "\t$0",
+            "}\n"
+        ],
+        "description": "Coverage point template."
+    },
+    "sv_coverpoint_options": {
+        "prefix": "sv_coverpoint_options",
+        "body": [
+            "$0"
+        ],
+        "description": "Coverage point option block template."
+    },
+    "sv_coverpoint_type_options": {
+        "prefix": [
+            "sv_coverpoint_type_options",
+            "sv_cross_type_options"
+        ],
+        "body": [
+            "$0"
+        ],
+        "description": "Coverage point and cross coverage type_options block template."
+    },
+    "sv_covercross": {
+        "prefix": "sv_covercross",
+        "body": [
+            "cx_${1:cross_identifier}: cross ${2:list_of_cross_items} iff (${3:1}) {",
+            "\t$0",
+            "}\n"
+        ],
+        "description": "Cross coverage template."
+    },
+    "sv_covercross_options": {
+        "prefix": "sv_covercross_options",
+        "body": [
+            "$0"
+        ],
+        "description": "Cross coverage option block template."
+    },
+    "sv_separator_block": {
+        "prefix": "sv_separator_block",
+        "body": [],
+        "description": "C++ style block comment."
+    },
+    "sv_separator_large": {
+        "prefix": "sv_separator_full",
+        "body": [],
+        "description": "Large 80 ch wide separator."
+    },
+    "sv_separator_small_label": {
+        "prefix": "sv_separator_half",
+        "body": [],
+        "description": "Small 40 ch wide separator."
+    },
+    "sv_whitespace_guide": {
+        "prefix": "sv_whitespace_guide",
+        "body": [],
+        "description": "A simple whitespace guide."
+    }
+}
