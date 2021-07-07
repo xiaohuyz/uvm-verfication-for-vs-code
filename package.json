@@ -12,6 +12,10 @@
         "name": "xiaohuyz",
         "email": "xiaohuyz@163.com"
     },
+    "repository": {
+		"type": "git",
+		"url": "https://github.com/xiaohuyz/uvm-verfication-for-vs-code"
+	},
     "categories": [
         "Programming Languages",
         "Snippets"
