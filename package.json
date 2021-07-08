@@ -1,8 +1,8 @@
 {
     "name": "uvm-verfication-for-vs-code",
     "displayName": "UVM Verfication for VS Code",
-    "description": "Snippets and syntaxe higlight for UVM",
-    "version": "0.0.1",
+    "description": "Snippets and syntax highlight for UVM",
+    "version": "0.0.2",
     "publisher": "xiaohuyz",
     "engines": {
         "vscode": "^1.57.0"
@@ -69,6 +69,7 @@
                 "path": "./snippets/uvm_phases.json"
             }
             
-        ]
+        ],
+        "icon": "UVM_Logo.png"
     }
 }
