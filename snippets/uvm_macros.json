@@ -51,6 +51,16 @@
     ],
     "description": "The utils macros define the infrastructure needed to enable the object/component for correct factory operation."
   },
+  "uvm_macro_component_utils_block": {
+    "prefix": "uvm_component_utils",
+    "context": "meta.class.systemverilog",
+    "body": [
+      "`uvm_component_utils_begin(${1:type})",
+      "\t$2",
+      "`uvm_component_utils_end"
+    ],
+    "description": "The utils macros define the infrastructure needed to enable the object/component for correct factory operation."
+  },
   "uvm_macro_component_param_utils": {
     "prefix": "uvm_component_param_utils",
     "context": "meta.class.systemverilog",
