@@ -1,9 +1,12 @@
 # Change Log
 
-All notable changes to the "uvm-verfication-for-vs-code" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
+## [0.0.3]
+* Add snippets for keywords and methods
+## [0.0.2]
 
-- Initial release
+* Bug fixes
+## [0.0.1]
+
+* Initial release of the extension
