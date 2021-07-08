@@ -78,6 +78,10 @@
             }
             
         ],
-        "icon": "./UVM_Logo.jpg"
+            "icon": "images/icon.jpg",
+            "galleryBanner": {
+              "color": "#C80000",
+              "theme": "dark"
+            }
     }
 }
