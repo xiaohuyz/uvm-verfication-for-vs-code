@@ -14,9 +14,9 @@
         "email": "xiaohuyz@163.com"
     },
     "repository": {
-		"type": "git",
-		"url": "https://github.com/xiaohuyz/uvm-verfication-for-vs-code"
-	},
+        "type": "git",
+        "url": "https://github.com/xiaohuyz/uvm-verfication-for-vs-code"
+    },
     "categories": [
         "Programming Languages",
         "Snippets"
@@ -55,7 +55,19 @@
             },
             {
                 "language": "systemverilog",
+                "path": "./snippets/sv_keywords.json"
+            },
+            {
+                "language": "systemverilog",
+                "path": "./snippets/sv_macros.json"
+            },
+            {
+                "language": "systemverilog",
                 "path": "./snippets/sv_language_constructs.json"
+            },
+            {
+                "language": "systemverilog",
+                "path": "./snippets/sv_language_methods.json"
             },
             {
                 "language": "systemverilog",
@@ -77,8 +89,6 @@
                 "language": "systemverilog",
                 "path": "./snippets/uvm_methods.json"
             }
-            
-        ]    
+        ]
     }
-    
 }

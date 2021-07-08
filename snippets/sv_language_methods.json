@@ -1,0 +1,9 @@
+{
+    "assert": {
+        "prefix": "assert",
+        "body": [
+            "assert()"
+        ],
+        "discription": "SystemVerilog assert"
+    }
+}
