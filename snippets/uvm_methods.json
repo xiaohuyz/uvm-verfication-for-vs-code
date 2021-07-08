@@ -5,5 +5,41 @@
             "get_full_name()"
         ],
         "discription": "get index of current component in UVM tree"
+    },
+    "get_parent": {
+        "prefix": "get_parent",
+        "body": [
+            "get_parent()"
+        ]
+    },
+    "get_child": {
+        "prefix": "get_child",
+        "body": [
+            "get_child($1{:name})"
+        ]
+    },
+    "get_first_child": {
+        "prefix": "get_first_child",
+        "body": [
+            "get_first_child(name)"
+        ]
+    },
+    "get_next_child": {
+        "prefix": "get_next_child",
+        "body": [
+            "get_next_child(name)"
+        ]
+    },
+    "get_children": {
+        "prefix": "get_children",
+        "body": [
+            "get_children()"
+        ]
+    },
+    "get_num_children": {
+        "prefix": "get_num_children",
+        "body": [
+            "get_num_children()"
+        ]
     }
 }
