@@ -29,6 +29,6 @@
 
 # License and source information
 
-[MIT](https://github.com/gvekony/sv-1800-2012/blob/master/LICENSE.md) &copy; **Gergo Vekony**
+[MIT](https://github.com/gvekony/sv-1800-2012/blob/master/LICENSE.md) &copy; **xiaohuyz**
 
 The source can be found @ [GitHub](https://github.com/gvekony/sv-1800-2012)
