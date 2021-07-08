@@ -3,7 +3,7 @@
 
 
 ## [0.0.3]
-* Add snippets for keywords and methods
+* Bug fixes
 ## [0.0.2]
 
 * Bug fixes
