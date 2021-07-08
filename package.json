@@ -3,6 +3,7 @@
     "displayName": "UVM Verfication for VS Code",
     "description": "Snippets and syntax highlight for UVM",
     "version": "0.0.4",
+    "icon": "icon.png",
     "publisher": "xiaohuyz",
     "engines": {
         "vscode": "^1.57.0"
@@ -78,6 +79,6 @@
             }
             
         ]    
-    },
-    "icon": "images/icon.png"
+    }
+    
 }
