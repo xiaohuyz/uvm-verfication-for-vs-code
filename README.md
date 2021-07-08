@@ -1,11 +1,11 @@
-# uvm-verfication-for-vs-code README
+# UVM Verfication for VS Code README
 
 # Features
 
 * Snippets and syntax highlight for UVM Verfication
 ## In progress/future
-* better  snippets for UVM-1.2 and IEEE UVM
-* ctags support
+* Better  snippets for UVM-1.2 and IEEE UVM
+* Ctags support
 
 
 
@@ -18,10 +18,10 @@
 
 # Release Notes
 ## [0.0.3]
-* add snippets for keywords and methods
+* Add snippets for keywords and methods
 ## [0.0.2]
 
-* bug fixes
+* Bug fixes
 ## [0.0.1]
 
 * Initial release of the extension
