@@ -12,11 +12,13 @@
 # Known Issues
 
 * Absence of some snippets
-* the syntax highlight is not perfect
+* The syntax highlight is not perfect
 
 
 
 # Release Notes
+## [0.0.3]
+* add snippets for keywords and methods
 ## [0.0.2]
 
 * bug fixes
