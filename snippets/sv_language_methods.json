@@ -2,8 +2,15 @@
     "assert": {
         "prefix": "assert",
         "body": [
-            "assert()"
+            "assert($1)"
         ],
         "discription": "SystemVerilog assert"
+    },
+    "display": {
+        "prefix": ["display"],
+        "body": [
+            "display($1);"
+        ],
+        "discription": "SystemVerilog display"
     }
 }

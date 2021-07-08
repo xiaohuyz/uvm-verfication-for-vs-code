@@ -262,8 +262,8 @@
     "uvm_driver": {
         "prefix": "uvm_driver",
         "body": [
-            "class ${1:$TM_FILENAME_BASE} extends uvm_driver;",
-            "\t$2",
+            "class ${1:$TM_FILENAME_BASE} #(${2:parameters}) extends uvm_driver;",
+            "\t$3",
             "\t",
             "\t`uvm_component_utils(${1:$TM_FILENAME_BASE});\n",
             "\tfunction new(string name = \"${1:$TM_FILENAME_BASE}\", uvm_component parent);",
@@ -275,7 +275,7 @@
         "description": "UVM driver class template"
     },
     "uvm_monitor": {
-        "prefix": "uvm_driver",
+        "prefix": "uvm_monitor",
         "body": [
             "class ${1:$TM_FILENAME_BASE} extends uvm_monitor;",
             "\t$2",
@@ -307,8 +307,8 @@
     "uvm_sequencer": {
         "prefix": "uvm_sequencer",
         "body": [
-            "class ${1:$TM_FILENAME_BASE} extends uvm_sequencer;",
-            "\t$2",
+            "class ${1:$TM_FILENAME_BASE} #(${2:parameters}) extends uvm_sequencer;",
+            "\t$3",
             "\t",
             "\t`uvm_component_utils(${1:$TM_FILENAME_BASE});\n",
             "\tfunction new(string name = \"${1:$TM_FILENAME_BASE}\", uvm_component parent);",
@@ -348,5 +348,35 @@
             "endclass"
         ],
         "description": "UVM env class template"
+    },
+    "uvm_test": {
+        "prefix": "uvm_test",
+        "body": [
+            "class ${1:$TM_FILENAME_BASE} extends uvm_test;",
+            "\t$2",
+            "\t",
+            "\t`uvm_component_utils(${1:$TM_FILENAME_BASE});\n",
+            "\tfunction new(string name = \"${1:$TM_FILENAME_BASE}\", uvm_component parent);",
+            "\t\tsuper.new(name, parent);",
+            "\tendfunction\n",
+            "\t$0",
+            "endclass"
+        ],
+        "description": "UVM env class template"
+    },
+    "uvm_blocking_get_port": {
+        "prefix": "uvm_blocking_get_port",
+        "body": "uvm_blocking_get_port #(${1:parameter}) $2;",
+        "description": ""
+    },
+    "uvm_analysis_port": {
+        "prefix": "uvm_analysis_port",
+        "body": "uvm_analysis_port #(${1:parameter}) $2;",
+        "description": ""
+    },
+    "uvm_tlm_analysis_fifo": {
+        "prefix": "uvm_tlm_analysis_fifo",
+        "body": "uvm_tlm_analysis_fifo #(${1:parameter}) $2;",
+        "description": ""
     }
 }

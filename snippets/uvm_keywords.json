@@ -1,0 +1,23 @@
+{
+    "is_active": {
+        "prefix": "is_active",
+        "body": [
+            "is_active"
+        ],
+        "discription": "UVM variable is_active"
+    },
+    "UVM_ACTIVE": {
+        "prefix": "UVM_ACTIVE",
+        "body": [
+            "UVM_ACTIVE"
+        ],
+        "discription": "UVM variable UVM_ACTIVE"
+    },
+    "UVM_PASSIVE": {
+        "prefix": "UVM_PASSIVE",
+        "body": [
+            "UVM_PASSIVE"
+        ],
+        "discription": "UVM variable UVM_PASSIVE"
+    }
+}

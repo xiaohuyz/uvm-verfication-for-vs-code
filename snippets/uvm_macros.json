@@ -88,14 +88,14 @@
   "uvm_config_db_set": {
     "prefix": "uvm_config_db_set",
     "body": [
-      "uvm_config_db#(${1:type})::set(${2:contxt}, ${3:inst_name}, ${4:field_name}, ${5:value});\n$0"
+      "uvm_config_db#(${1:type})::set(${2:contxt}, ${3:inst_name}, ${4:field_name}, ${5:value})$0"
     ],
     "description": "Create a new or update an existing configuration setting for field_name in inst_name from cntxt."
   },
   "uvm_config_db_get": {
     "prefix": "uvm_config_db_get",
     "body": [
-      "uvm_config_db#(${1:type})::get(${2:contxt}, ${3:inst_name}, ${4:field_name}, ${5:value});\n$0"
+      "uvm_config_db#(${1:type})::get(${2:contxt}, ${3:inst_name}, ${4:field_name}, ${5:value})$0"
     ],
     "description": "Get the value for field_name in inst_name, using component cntxt as the starting search point."
   },
@@ -164,6 +164,13 @@
     "prefix": "uvm_factory_type_override",
     "body": [
       "${1:<base_type>}::type_id::set_type_override(${2:<new_type>}::get_type());\n"
+    ]
+  },
+  "uvm_do": {
+    "context": "meta.class-body.systemverilog",
+    "prefix": "uvm_do",
+    "body": [
+      "`uvm_do($1);"
     ]
   }
 }
