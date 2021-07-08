@@ -78,7 +78,7 @@
             }
             
         ],
-            "icon": "./images/icon.jpg",
+            "icon": ["./images/icon.jpg"],
             "galleryBanner": {
               "color": "#C80000",
               "theme": "dark"
