@@ -67,6 +67,14 @@
             {
                 "language": "systemverilog",
                 "path": "./snippets/uvm_phases.json"
+            },
+            {
+                "language": "systemverilog",
+                "path": "./snippets/uvm_keywords.json"
+            },
+            {
+                "language": "systemverilog",
+                "path": "./snippets/uvm_methods.json"
             }
             
         ],
