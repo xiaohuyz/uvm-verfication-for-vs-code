@@ -2,7 +2,7 @@
     "name": "uvm-verfication-for-vs-code",
     "displayName": "UVM Verfication for VS Code",
     "description": "Snippets and syntax highlight for UVM",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "icon": "icon.png",
     "publisher": "xiaohuyz",
     "engines": {

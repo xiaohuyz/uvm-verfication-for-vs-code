@@ -17,6 +17,9 @@
 
 
 # Release Notes
+## [1.0]
+* snippets fix
+* add some highlights 
 ## [0.0.5]
 * Add more snippets
 * Bug fixes
@@ -32,6 +35,6 @@
 
 # License and source information
 
-[MIT](https://github.com/gvekony/sv-1800-2012/blob/master/LICENSE.md) &copy; **xiaohuyz**
+[MIT](https://github.com/xiaohuyz/uvm-verfication-for-vs-code/blob/master/LICENSE.md)   &copy; **xiaohuyz**
 
-The source can be found @ [GitHub](https://github.com/gvekony/sv-1800-2012)
+The source can be found @ [GitHub](https://github.com/xiaohuyz/uvm-verfication-for-vs-code)
