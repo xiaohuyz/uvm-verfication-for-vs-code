@@ -1,4 +1,7 @@
 # Change Log
+## [1.0]
+* snippets fix
+* add some highlights 
 ## [0.0.5]
 * Add more snippets
 * Bug fixes
