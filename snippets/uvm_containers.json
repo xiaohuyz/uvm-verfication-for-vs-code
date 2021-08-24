@@ -18,14 +18,9 @@
     },
     "uvm_object_with_parameters": {
         "prefix": "uvm_object_with_parameters",
-        "context": [
-            "meta.package.systemverilog",
-            "source.systemverilog"
-        ],
         "body": [
-            "class ${1:$TM_FILENAME_BASE} #(${2:parameters}) extends ${3:uvm_object};",
-            "\ttypedef $1 #(${2/(\\b(parameter|type)\\s+([A-Za-z_][A-Za-z0-9_$]*)(\\s*=\\s*([A-Za-z0-9_$]+))?)*\\b/$3/g}) this_type_t;",
-            "\t`uvm_object_param_utils(this_type_t);\n",
+            "class ${1:$TM_FILENAME_BASE} extends uvm_object #(${2:parameters});",
+            "\t`uvm_object_param_utils($1);\n",
             "\tfunction new(string name = \"$1\");",
             "\t\tsuper.new(name);",
             "\tendfunction: new",
@@ -58,9 +53,8 @@
             "source.systemverilog"
         ],
         "body": [
-            "class ${1:$TM_FILENAME_BASE} #(${2:parameters}) extends ${3:uvm_component};",
-            "\ttypedef $1 #(${2/(\\b(parameter|type)\\s+([A-Za-z_][A-Za-z0-9_$]*)(\\s*=\\s*([A-Za-z0-9_$]+))?)*\\b/$3/g}) this_type_t;",
-            "\t`uvm_component_param_utils(this_type_t);\n",
+            "class ${1:$TM_FILENAME_BASE} extends uvm_component #(${2:parameters}) ;",
+            "\t`uvm_component_param_utils($1);\n",
             "\tfunction new(string name = \"$1\", uvm_component parent);",
             "\t\tsuper.new(name, parent);",
             "\tendfunction: new\n",
@@ -94,9 +88,8 @@
             "source.systemverilog"
         ],
         "body": [
-            "class ${1:$TM_FILENAME_BASE} #(${2:parameters}) extends ${3:uvm_sequence};",
-            "\ttypedef $1 #(${2/(\\b(parameter|type)\\s+([A-Za-z_][A-Za-z0-9_$]*)(\\s*=\\s*([A-Za-z0-9_$]+))?)*\\b/$3/g}) this_type_t;",
-            "\t`uvm_object_param_utils(this_type_t);\n",
+            "class ${1:$TM_FILENAME_BASE} extends uvm_sequence #(${2:parameters});",
+            "\t`uvm_object_param_utils($1);\n",
             "\tfunction new(string name = \"$1\");",
             "\t\tsuper.new(name);",
             "\tendfunction: new\n",
@@ -143,9 +136,8 @@
             "source.systemverilog"
         ],
         "body": [
-            "class ${1:$TM_FILENAME_BASE} #(${2:parameters}) extends ${3:uvm_sequence_item};",
-            "\ttypedef $1 #(${2/(\\b(parameter|type)\\s+([A-Za-z_][A-Za-z0-9_$]*)(\\s*=\\s*([A-Za-z0-9_$]+))?)*\\b/$3/g}) this_type_t;",
-            "\t`uvm_object_param_utils(this_type_t);\n",
+            "class ${1:$TM_FILENAME_BASE} extends uvm_sequence_item #(${2:parameters}) ;",
+            "\t`uvm_object_param_utils($1);\n",
             "\tfunction new(string name = \"$1\");",
             "\t\tsuper.new(name);",
             "\tendfunction: new\n",
@@ -262,7 +254,7 @@
     "uvm_driver": {
         "prefix": "uvm_driver",
         "body": [
-            "class ${1:$TM_FILENAME_BASE} #(${2:parameters}) extends uvm_driver;",
+            "class ${1:$TM_FILENAME_BASE} extends uvm_driver #(${2:parameters}) ;",
             "\t$3",
             "\t",
             "\t`uvm_component_utils(${1:$TM_FILENAME_BASE});\n",
