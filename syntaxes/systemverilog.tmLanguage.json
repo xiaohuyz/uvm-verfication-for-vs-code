@@ -3,53 +3,104 @@
   "name": "UVM for Verfication",
   "scopeName": "source.sv",
   "patterns": [
-    {"include": "#bind_directive"},
-    {"include": "#checker_declaration"},
-    {"include": "#class_declaration"},
-    {"include": "#config_declaration"},
-    {"include": "#interface_declaration"},
-    {"include": "#module_declaration"},
-    {"include": "#package_declaration"},
-    {"include": "#program_declaration"},
-    {"include": "#udp_declaration"},
-
-    {"include": "#compiler_directive"},
-    {"include": "#functions"},
-    {"include": "#net_types"},
-    {"include": "#system_tasks"},
-    {"include": "#punctuation"},
-    {"include": "#type_declaration"},
-
-    {"include": "#constraints"},
-    {"include": "#covergroup_declaration"}
-
+    {
+      "include": "#bind_directive"
+    },
+    {
+      "include": "#checker_declaration"
+    },
+    {
+      "include": "#class_declaration"
+    },
+    {
+      "include": "#config_declaration"
+    },
+    {
+      "include": "#interface_declaration"
+    },
+    {
+      "include": "#module_declaration"
+    },
+    {
+      "include": "#package_declaration"
+    },
+    {
+      "include": "#program_declaration"
+    },
+    {
+      "include": "#udp_declaration"
+    },
+    {
+      "include": "#compiler_directive"
+    },
+    {
+      "include": "#functions"
+    },
+    {
+      "include": "#net_types"
+    },
+    {
+      "include": "#system_tasks"
+    },
+    {
+      "include": "#punctuation"
+    },
+    {
+      "include": "#type_declaration"
+    },
+    {
+      "include": "#constraints"
+    },
+    {
+      "include": "#covergroup_declaration"
+    }
   ],
   "repository": {
     "prototype": {
       "patterns": [
-        {"include": "#punctuation"},
-        {"include": "#compiler_directive"},
-        {"include": "#curly_braces"},
-        {"include": "#lifetime"},
-        {"include": "#parameter_parens"},
-        {"include": "#parens"},
-        {"include": "#square_brackets"}
+        {
+          "include": "#punctuation"
+        },
+        {
+          "include": "#compiler_directive"
+        },
+        {
+          "include": "#curly_braces"
+        },
+        {
+          "include": "#lifetime"
+        },
+        {
+          "include": "#parameter_parens"
+        },
+        {
+          "include": "#parens"
+        },
+        {
+          "include": "#square_brackets"
+        }
       ]
     },
     "uvm_prototype": {
       "patterns": [
-        {"include": "#uvm"}
+        {
+          "include": "#uvm"
+        }
       ]
     },
     "prototype_parens": {
       "comment": "Prototype for inside parentheses.",
       "patterns": [
         {
-          "comment": "Instantiation parameter patterns" ,
+          "comment": "Instantiation parameter patterns",
           "match": "(?<!\\w|\\])\\s*(\\.)\\s*([a-zA-Z_][a-zA-Z_0-9]*)(?=(?:\\s*\\())",
           "captures": {
-            "1": {"name": "punctuation.separator.dot-access.systemverilog"},
-            "2": {"name": "variable.parameter.systemverilog"}
+            "1": {
+              "name": "punctuation.separator.dot-access.systemverilog"
+            },
+            "2": {
+              "name": "variable.parameter.systemverilog"
+            }
           }
         },
         {
@@ -57,49 +108,89 @@
           "match": "(?i)\\b(interface|sequence|untyped)\\b",
           "name": "storage.type.formal-type-in-parens.systemverilog"
         },
-        {"include": "#uvm_prototype"},
-        {"include": "#prototype"},
-        {"include": "#net_types"},
-        {"include": "#operators"},
-        {"include": "#system_tasks"}
+        {
+          "include": "#uvm_prototype"
+        },
+        {
+          "include": "#prototype"
+        },
+        {
+          "include": "#net_types"
+        },
+        {
+          "include": "#operators"
+        },
+        {
+          "include": "#system_tasks"
+        }
       ]
     },
     "prototype_curly_braces": {
       "comment": "Prototype for curly braces; concatenation, constraints, covergroups.",
       "patterns": [
-        {"include": "#prototype_parens"},
-        {"include": "#constraint_statements"},
-        {"include": "#covergroup_innards"},
-        {"include": "#functions"},
-        {"include": "#statements"}
+        {
+          "include": "#prototype_parens"
+        },
+        {
+          "include": "#constraint_statements"
+        },
+        {
+          "include": "#covergroup_innards"
+        },
+        {
+          "include": "#functions"
+        },
+        {
+          "include": "#statements"
+        }
       ]
     },
     "prototype_statements": {
       "comment": "Prototype for statement space. >>> Procedural blocks are included for the sake of generate for(){assign} constructs mostly.",
       "patterns": [
-        {"include": "#uvm_prototype"},
-        {"include": "#prototype"},
-        {"include": "#blocks"},
-        {"include": "#net_types"},
-        {"include": "#operators"},
-        {"include": "#procedural_blocks"},
-        {"include": "#statements"},
-        {"include": "#system_tasks"},
-        {"include": "#type_declaration"}
+        {
+          "include": "#uvm_prototype"
+        },
+        {
+          "include": "#prototype"
+        },
+        {
+          "include": "#blocks"
+        },
+        {
+          "include": "#net_types"
+        },
+        {
+          "include": "#operators"
+        },
+        {
+          "include": "#procedural_blocks"
+        },
+        {
+          "include": "#statements"
+        },
+        {
+          "include": "#system_tasks"
+        },
+        {
+          "include": "#type_declaration"
+        }
       ]
     },
-
-
     "module_declaration": {
       "patterns": [
         {
           "begin": "(?i)^\\s*(module|macromodule)\\b",
           "beginCaptures": {
-            "1": {"name": "storage.type.module.systemverilog"}
+            "1": {
+              "name": "storage.type.module.systemverilog"
+            }
           },
           "end": "(?i)^\\s*(endmodule)\\b",
           "endCaptures": {
-            "1": {"name": "storage.type.module.systemverilog"}
+            "1": {
+              "name": "storage.type.module.systemverilog"
+            }
           },
           "name": "meta.module.systemverilog",
           "patterns": [
@@ -109,52 +200,97 @@
               "end": "(?=(?:\\;))",
               "name": "meta.module.declaration.systemverilog",
               "patterns": [
-                {"include": "#prototype"},
-                {"include": "#operators"},
+                {
+                  "include": "#prototype"
+                },
+                {
+                  "include": "#operators"
+                },
                 {
                   "match": "\\b([A-Za-z_][A-Za-z0-9_$]*)\\b",
                   "name": "entity.name.type.systemverilog"
                 }
               ]
             },
-            {"include": "#prototype_statements"},
-            {"include": "#bind_directive"},
-            {"include": "#checker_declaration"},
-            {"include": "#class_declaration"},
-            {"include": "#clocking_declaration"},
-            {"include": "#constraints"},
-            {"include": "#covergroup_declaration"},
-            {"include": "#external_declarations"},
-            {"include": "#functions"},
-            {"include": "#gate_level_modeling"},
-            {"include": "#interface_declaration"},
-            {"include": "#module_declaration"},
-            {"include": "#procedural_blocks"},
-            {"include": "#program_declaration"},
-            {"include": "#property"},
-            {"include": "#sequence"},
-            {"include": "#timeunits_declaration"},
-            {"include": "#udp_declaration"}
+            {
+              "include": "#prototype_statements"
+            },
+            {
+              "include": "#bind_directive"
+            },
+            {
+              "include": "#checker_declaration"
+            },
+            {
+              "include": "#class_declaration"
+            },
+            {
+              "include": "#clocking_declaration"
+            },
+            {
+              "include": "#constraints"
+            },
+            {
+              "include": "#covergroup_declaration"
+            },
+            {
+              "include": "#external_declarations"
+            },
+            {
+              "include": "#functions"
+            },
+            {
+              "include": "#gate_level_modeling"
+            },
+            {
+              "include": "#interface_declaration"
+            },
+            {
+              "include": "#module_declaration"
+            },
+            {
+              "include": "#procedural_blocks"
+            },
+            {
+              "include": "#program_declaration"
+            },
+            {
+              "include": "#property"
+            },
+            {
+              "include": "#sequence"
+            },
+            {
+              "include": "#timeunits_declaration"
+            },
+            {
+              "include": "#udp_declaration"
+            }
           ]
         },
         {
           "match": "\\b(endmodule)\\b",
           "name": "invalid.illegal.stray-keyword.systemverilog"
         },
-        {"include": "#prototype"}
+        {
+          "include": "#prototype"
+        }
       ]
     },
-
     "udp_declaration": {
       "patterns": [
         {
           "begin": "(?i)^\\s*(primitive)\\b",
           "beginCaptures": {
-            "1": {"name": "storage.type.udp.systemverilog"}
+            "1": {
+              "name": "storage.type.udp.systemverilog"
+            }
           },
           "end": "(?i)^\\s*(endprimitive)\\b",
           "endCaptures": {
-            "1": {"name": "storage.type.udp.systemverilog"}
+            "1": {
+              "name": "storage.type.udp.systemverilog"
+            }
           },
           "name": "meta.udp.systemverilog",
           "patterns": [
@@ -167,11 +303,17 @@
                 {
                   "match": "((\\:\\:)\\s*)?([A-Za-z_][A-Za-z0-9_$]*)\\s*(?=(?:\\(|\\#\\(|\\;))",
                   "captures": {
-                    "2": {"name": "punctuation.separator.namespace.access.systemverilog"},
-                    "3": {"name": "entity.name.type.systemverilog"}
+                    "2": {
+                      "name": "punctuation.separator.namespace.access.systemverilog"
+                    },
+                    "3": {
+                      "name": "entity.name.type.systemverilog"
+                    }
                   }
                 },
-                {"include": "#prototype"}
+                {
+                  "include": "#prototype"
+                }
               ]
             }
           ]
@@ -190,17 +332,20 @@
         }
       ]
     },
-
     "interface_declaration": {
       "patterns": [
         {
           "begin": "(?i)^\\s*(interface)\\b",
           "beginCaptures": {
-            "1": {"name": "storage.type.interface.systemverilog"}
+            "1": {
+              "name": "storage.type.interface.systemverilog"
+            }
           },
           "end": "(?i)^\\s*(endinterface)\\b",
           "endCaptures": {
-            "1": {"name": "storage.type.interface.systemverilog"}
+            "1": {
+              "name": "storage.type.interface.systemverilog"
+            }
           },
           "name": "meta.interface.systemverilog",
           "patterns": [
@@ -210,33 +355,75 @@
               "end": "(?=(?:\\;))",
               "name": "meta.interface.declaration.systemverilog",
               "patterns": [
-                {"include": "#prototype"},
-                {"include": "#operators"},
+                {
+                  "include": "#prototype"
+                },
+                {
+                  "include": "#operators"
+                },
                 {
                   "match": "\\b([A-Za-z_][A-Za-z0-9_$]*)\\b",
                   "name": "entity.name.type.systemverilog"
                 }
               ]
             },
-            {"include": "#prototype_statements"},
-            {"include": "#bind_directive"},
-            {"include": "#checker_declaration"},
-            {"include": "#class_declaration"},
-            {"include": "#clocking_declaration"},
-            {"include": "#constraints"},
-            {"include": "#covergroup_declaration"},
-            {"include": "#external_declarations"},
-            {"include": "#functions"},
-            {"include": "#gate_level_modeling"},
-            {"include": "#interface_declaration"},
-            {"include": "#modport_declaration"},
-            {"include": "#module_declaration"},
-            {"include": "#procedural_blocks"},
-            {"include": "#program_declaration"},
-            {"include": "#property"},
-            {"include": "#sequence"},
-            {"include": "#timeunits_declaration"},
-            {"include": "#udp_declaration"}
+            {
+              "include": "#prototype_statements"
+            },
+            {
+              "include": "#bind_directive"
+            },
+            {
+              "include": "#checker_declaration"
+            },
+            {
+              "include": "#class_declaration"
+            },
+            {
+              "include": "#clocking_declaration"
+            },
+            {
+              "include": "#constraints"
+            },
+            {
+              "include": "#covergroup_declaration"
+            },
+            {
+              "include": "#external_declarations"
+            },
+            {
+              "include": "#functions"
+            },
+            {
+              "include": "#gate_level_modeling"
+            },
+            {
+              "include": "#interface_declaration"
+            },
+            {
+              "include": "#modport_declaration"
+            },
+            {
+              "include": "#module_declaration"
+            },
+            {
+              "include": "#procedural_blocks"
+            },
+            {
+              "include": "#program_declaration"
+            },
+            {
+              "include": "#property"
+            },
+            {
+              "include": "#sequence"
+            },
+            {
+              "include": "#timeunits_declaration"
+            },
+            {
+              "include": "#udp_declaration"
+            }
           ]
         },
         {
@@ -250,13 +437,21 @@
         {
           "begin": "(?i)^\\s*(modport)\\s+([A-Za-z_][A-Za-z0-9_$]*)\\s*(\\()",
           "beginCaptures": {
-            "1": {"name": "storage.type.modport.systemverilog"},
-            "2": {"name": "entity.name.type.systemverilog"},
-            "3": {"name": "punctuation.section.parens.begin.bracket.round.systemverilog"}
+            "1": {
+              "name": "storage.type.modport.systemverilog"
+            },
+            "2": {
+              "name": "entity.name.type.systemverilog"
+            },
+            "3": {
+              "name": "punctuation.section.parens.begin.bracket.round.systemverilog"
+            }
           },
           "end": "(\\))",
           "endCaptures": {
-            "0": {"name": "punctuation.section.parens.end.bracket.round.systemverilog"}
+            "0": {
+              "name": "punctuation.section.parens.end.bracket.round.systemverilog"
+            }
           },
           "name": "meta.declaration.interface-modport.systemverilog",
           "patterns": [
@@ -268,7 +463,9 @@
               "match": "\\b(clocking)\\b",
               "name": "storage.type.clocking-block.systemverilog"
             },
-            {"include": "#prototype"}
+            {
+              "include": "#prototype"
+            }
           ]
         }
       ]
@@ -279,22 +476,36 @@
           "comment": "Default clocking selection.",
           "match": "(?i)^\\s*(default)\\s+(clocking)\\s+([A-Za-z_][A-Za-z0-9_$]*)(?=(?:\\s*\\;))",
           "captures": {
-            "1": {"name": "storage.modifier.systemverilog"},
-            "2": {"name": "storage.type.default-clocking.systemverilog"},
-            "3": {"name": "entity.name.default-clocking.systemverilog"}
+            "1": {
+              "name": "storage.modifier.systemverilog"
+            },
+            "2": {
+              "name": "storage.type.default-clocking.systemverilog"
+            },
+            "3": {
+              "name": "entity.name.default-clocking.systemverilog"
+            }
           }
         },
         {
           "comment": "Clocking declaration",
           "begin": "(?i)^\\s*((default|global)\\s+)?(clocking)\\s+([A-Za-z_][A-Za-z0-9_$]*)?(?=(?:\\s*\\@))",
           "beginCaptures": {
-            "2": {"name": "storage.modifier.systemverilog"},
-            "3": {"name": "storage.type.clocking.systemverilog"},
-            "4": {"name": "entity.name.type.systemverilog"}
+            "2": {
+              "name": "storage.modifier.systemverilog"
+            },
+            "3": {
+              "name": "storage.type.clocking.systemverilog"
+            },
+            "4": {
+              "name": "entity.name.type.systemverilog"
+            }
           },
           "end": "(?i)^\\s*(endclocking)\\b",
           "endCaptures": {
-            "1": {"name": "storage.type.clocking.systemverilog"}
+            "1": {
+              "name": "storage.type.clocking.systemverilog"
+            }
           },
           "name": "meta.clocking-block.systemverilog",
           "patterns": [
@@ -306,10 +517,18 @@
               "match": "\\b(default)\\b",
               "name": "keyword.control.systemverilog"
             },
-            {"include": "#prototype"},
-            {"include": "#operators"},
-            {"include": "#property"},
-            {"include": "#sequence"}
+            {
+              "include": "#prototype"
+            },
+            {
+              "include": "#operators"
+            },
+            {
+              "include": "#property"
+            },
+            {
+              "include": "#sequence"
+            }
           ]
         },
         {
@@ -318,17 +537,20 @@
         }
       ]
     },
-
     "program_declaration": {
       "patterns": [
         {
           "begin": "(?i)^\\s*(program)\\b",
           "beginCaptures": {
-            "1": {"name": "storage.type.program.systemverilog"}
+            "1": {
+              "name": "storage.type.program.systemverilog"
+            }
           },
           "end": "(?i)^\\s*(endprogram)\\b",
           "endCaptures": {
-            "1": {"name": "storage.type.program.systemverilog"}
+            "1": {
+              "name": "storage.type.program.systemverilog"
+            }
           },
           "name": "meta.program.systemverilog",
           "patterns": [
@@ -341,16 +563,28 @@
                 {
                   "match": "((\\:\\:)\\s*)?([A-Za-z_][A-Za-z0-9_$]*)\\s*(?=(?:\\(|\\#\\(|\\;))",
                   "captures": {
-                    "2": {"name": "punctuation.separator.namespace.access.systemverilog"},
-                    "3": {"name": "entity.name.type.systemverilog"}
+                    "2": {
+                      "name": "punctuation.separator.namespace.access.systemverilog"
+                    },
+                    "3": {
+                      "name": "entity.name.type.systemverilog"
+                    }
                   }
                 },
-                {"include": "#prototype"}
+                {
+                  "include": "#prototype"
+                }
               ]
             },
-            {"include": "#prototype_statements"},
-            {"include": "#clocking_declaration"},
-            {"include": "#covergroup_declaration"}
+            {
+              "include": "#prototype_statements"
+            },
+            {
+              "include": "#clocking_declaration"
+            },
+            {
+              "include": "#covergroup_declaration"
+            }
           ]
         },
         {
@@ -359,17 +593,20 @@
         }
       ]
     },
-
     "package_declaration": {
       "patterns": [
         {
           "begin": "(?i)(^\\s*)(package)\\b",
           "beginCaptures": {
-            "2": {"name": "storage.type.package.systemverilog"}
+            "2": {
+              "name": "storage.type.package.systemverilog"
+            }
           },
           "end": "(?i)(^\\s*)(endpackage)\\b",
           "endCaptures": {
-            "2": {"name": "storage.type.package.systemverilog"}
+            "2": {
+              "name": "storage.type.package.systemverilog"
+            }
           },
           "name": "meta.package.systemverilog",
           "patterns": [
@@ -381,24 +618,52 @@
                 {
                   "match": "\\b([A-Za-z_][A-Za-z0-9_$]*)\\s*(?=(?:\\;))",
                   "captures": {
-                    "1": {"name": "entity.name.type.systemverilog"}
+                    "1": {
+                      "name": "entity.name.type.systemverilog"
+                    }
                   }
                 },
-                {"include": "#prototype"}
+                {
+                  "include": "#prototype"
+                }
               ]
             },
-            {"include": "#uvm_prototype"},
-            {"include": "#prototype"},
-            {"include": "#class_declaration"},
-            {"include": "#covergroup_declaration"},
-            {"include": "#external_declarations"},
-            {"include": "#functions"},
-            {"include": "#net_types"},
-            {"include": "#operators"},
-            {"include": "#property"},
-            {"include": "#sequence"},
-            {"include": "#system_tasks"},
-            {"include": "#type_declaration"}
+            {
+              "include": "#uvm_prototype"
+            },
+            {
+              "include": "#prototype"
+            },
+            {
+              "include": "#class_declaration"
+            },
+            {
+              "include": "#covergroup_declaration"
+            },
+            {
+              "include": "#external_declarations"
+            },
+            {
+              "include": "#functions"
+            },
+            {
+              "include": "#net_types"
+            },
+            {
+              "include": "#operators"
+            },
+            {
+              "include": "#property"
+            },
+            {
+              "include": "#sequence"
+            },
+            {
+              "include": "#system_tasks"
+            },
+            {
+              "include": "#type_declaration"
+            }
           ]
         },
         {
@@ -407,18 +672,21 @@
         }
       ]
     },
-
     "bind_directive": {
       "patterns": [
         {
           "begin": "(?i)(^\\s*)(bind)\\b",
           "beginCaptures": {
-            "2": {"name": "keyword.other.bind-directive.systemverilog"}
+            "2": {
+              "name": "keyword.other.bind-directive.systemverilog"
+            }
           },
           "end": "(?=(?:\\;))",
           "name": "meta.declartion.bind-construct.systemverilog",
           "patterns": [
-            {"include": "#prototype"},
+            {
+              "include": "#prototype"
+            },
             {
               "match": "\\b(function)\\b",
               "name": "storage.type.systemverilog"
@@ -427,17 +695,20 @@
         }
       ]
     },
-
     "config_declaration": {
       "patterns": [
         {
           "begin": "(?i)^\\s*(config)\\b",
           "beginCaptures": {
-            "1": {"name": "storage.type.config.systemverilog"}
+            "1": {
+              "name": "storage.type.config.systemverilog"
+            }
           },
           "end": "(?i)^\\s*(endconfig)\\b",
           "endCaptures": {
-            "1": {"name": "storage.type.config.systemverilog"}
+            "1": {
+              "name": "storage.type.config.systemverilog"
+            }
           },
           "name": "meta.config.systemverilog",
           "patterns": [
@@ -449,7 +720,9 @@
                 {
                   "match": "\\b([A-Za-z_][A-Za-z0-9_$]*)\\b",
                   "captures": {
-                    "1": {"name": "entity.name.type.systemverilog"}
+                    "1": {
+                      "name": "entity.name.type.systemverilog"
+                    }
                   }
                 }
               ]
@@ -462,9 +735,15 @@
               "match": "\\b(cell|config|default|instance|liblist|use)\\b",
               "name": "keyword.control.config-rule-statement.systemverilog"
             },
-            {"include": "#prototype"},
-            {"include": "#net_types"},
-            {"include": "#operators"}
+            {
+              "include": "#prototype"
+            },
+            {
+              "include": "#net_types"
+            },
+            {
+              "include": "#operators"
+            }
           ]
         },
         {
@@ -473,17 +752,20 @@
         }
       ]
     },
-
     "checker_declaration": {
       "patterns": [
         {
           "begin": "(?i)^\\s*(checker)\\b",
           "beginCaptures": {
-            "1": {"name": "storage.type.checker.systemverilog"}
+            "1": {
+              "name": "storage.type.checker.systemverilog"
+            }
           },
           "end": "(?i)^\\s*(endchecker)\\b",
           "endCaptures": {
-            "1": {"name": "storage.type.checker.systemverilog"}
+            "1": {
+              "name": "storage.type.checker.systemverilog"
+            }
           },
           "name": "meta.checker.systemverilog",
           "patterns": [
@@ -496,14 +778,22 @@
                 {
                   "match": "\\b([A-Za-z_][A-Za-z0-9_$]*)\\s*(?=(?:\\(|\\#\\(|\\;))",
                   "captures": {
-                    "1": {"name": "entity.name.type.systemverilog"}
+                    "1": {
+                      "name": "entity.name.type.systemverilog"
+                    }
                   }
                 },
-                {"include": "#prototype"}
+                {
+                  "include": "#prototype"
+                }
               ]
             },
-            {"include": "#prototype_statements"},
-            {"include": "#clocking_declaration"}
+            {
+              "include": "#prototype_statements"
+            },
+            {
+              "include": "#clocking_declaration"
+            }
           ]
         },
         {
@@ -512,8 +802,6 @@
         }
       ]
     },
-
-
     "external_declarations": {
       "patterns": [
         {
@@ -525,7 +813,9 @@
               "comment": "Outer qualifiers, like extern >> _protected static_ << function...",
               "include": "#variable_types"
             },
-            {"include": "#punctuation"},
+            {
+              "include": "#punctuation"
+            },
             {
               "match": "\\b(extern)\\b",
               "name": "storage.modifier.systemverilog"
@@ -534,7 +824,9 @@
               "comment": "External modules",
               "begin": "\\b(checker|constraint|module|program)\\b",
               "beginCaptures": {
-                "1": {"name": "storage.type.systemverilog"}
+                "1": {
+                  "name": "storage.type.systemverilog"
+                }
               },
               "end": "(?=(?:\\;))",
               "patterns": [
@@ -542,20 +834,28 @@
                   "match": "\\b([A-Za-z_][A-Za-z0-9_$]*)\\b",
                   "name": "entity.name.type.systemverilog"
                 },
-                {"include": "#prototype"}
+                {
+                  "include": "#prototype"
+                }
               ]
             },
             {
               "comment": "External functions and tasks.",
               "begin": "\\b(function|task)\\b",
               "beginCaptures": {
-                "1": {"name": "storage.type.systemverilog"}
+                "1": {
+                  "name": "storage.type.systemverilog"
+                }
               },
               "end": "(?=(?:\\;))",
               "name": "meta.external-declaration.function.systemverilog",
               "patterns": [
-                {"include": "#prototype"},
-                {"include": "#variable_types"},
+                {
+                  "include": "#prototype"
+                },
+                {
+                  "include": "#variable_types"
+                },
                 {
                   "match": "\\b([A-Za-z_][A-Za-z0-9_$]*)\\b",
                   "name": "entity.name.function.systemverilog"
@@ -574,11 +874,14 @@
         }
       ]
     },
-
     "punctuation": {
       "patterns": [
-        {"include": "#end_labels"},
-        {"include": "#namespaces"},
+        {
+          "include": "#end_labels"
+        },
+        {
+          "include": "#namespaces"
+        },
         {
           "match": "(?<!\\:)\\:(?!\\:)",
           "name": "punctuation.definition.label.systemverilog"
@@ -586,7 +889,9 @@
         {
           "begin": "\\b(import|export)\\b(?!.*\\()",
           "beginCaptures": {
-            "1": {"name": "keyword.control.import.systemverilog"}
+            "1": {
+              "name": "keyword.control.import.systemverilog"
+            }
           },
           "end": "(?<=\\;)",
           "name": "meta.import.declaration.systemverilog",
@@ -602,7 +907,9 @@
             {
               "begin": "(\\:\\:)",
               "beginCaptures": {
-                "1": {"name": "punctuation.separator.namespace.access.systemverilog"}
+                "1": {
+                  "name": "punctuation.separator.namespace.access.systemverilog"
+                }
               },
               "end": "(?=(?:\\;))",
               "name": "meta.import.declaration.elements.systemverilog",
@@ -631,47 +938,68 @@
           "comment": "Namespace member functions.",
           "match": "(\\:\\:)\\s*([A-Za-z_][A-Za-z0-9_$]*)(?=(?:\\s*\\())",
           "captures": {
-            "1": {"name": "punctuation.separator.namespace.access.systemverilog"},
-            "2": {"name": "support.function.systemverilog"}
+            "1": {
+              "name": "punctuation.separator.namespace.access.systemverilog"
+            },
+            "2": {
+              "name": "support.function.systemverilog"
+            }
           }
         },
         {
           "comment": "Namespace members.",
           "match": "(\\:\\:)\\s*([A-Za-z_][A-Za-z0-9_$]*)\\b",
           "captures": {
-            "1": {"name": "punctuation.separator.namespace.access.systemverilog"},
-            "2": {"name": "entity.name.type.systemverilog"}
+            "1": {
+              "name": "punctuation.separator.namespace.access.systemverilog"
+            },
+            "2": {
+              "name": "entity.name.type.systemverilog"
+            }
           }
         },
-
         {
           "comment": "Class, interface, other data structure accessed by the dot accessor.",
           "match": "\\b([A-Za-z_][A-Za-z0-9_$]*)(?=(?:\\s*(\\[.*\\])?\\.\\s*\\w+))",
           "captures": {
-            "1": {"name": "entity.name.type.systemverilog"}
+            "1": {
+              "name": "entity.name.type.systemverilog"
+            }
           }
         },
         {
           "comment": "Functions and parameters in instantiations and functions.",
-          "match": "(\\.)\\s*([a-zA-Z_][a-zA-Z_0-9]*)(?=(?:\\s*\\())" ,
+          "match": "(\\.)\\s*([a-zA-Z_][a-zA-Z_0-9]*)(?=(?:\\s*\\())",
           "captures": {
-            "1": {"name": "punctuation.separator.dot-access.systemverilog"},
-            "2": {"name": "support.function.systemverilog"}
+            "1": {
+              "name": "punctuation.separator.dot-access.systemverilog"
+            },
+            "2": {
+              "name": "support.function.systemverilog"
+            }
           }
         },
         {
           "comment": "Fields, properties, members and attributes of a class or other data structure.",
           "match": "(\\.)\\s*(([a-zA-Z_][a-zA-Z_0-9]*)\\b(?!\\s*\\())",
           "captures": {
-            "1": {"name": "punctuation.separator.dot-access.systemverilog"},
-            "2": {"name": "variable.other.member.systemverilog"}
+            "1": {
+              "name": "punctuation.separator.dot-access.systemverilog"
+            },
+            "2": {
+              "name": "variable.other.member.systemverilog"
+            }
           }
         },
         {
           "match": "(?<!\\.)(\\.)(\\*)(?!(?:\\*))",
           "captures": {
-            "1": {"name": "punctuation.separator.dot-access.systemverilog"},
-            "2": {"name": "keyword.operator.wildcard.systemverilog"}
+            "1": {
+              "name": "punctuation.separator.dot-access.systemverilog"
+            },
+            "2": {
+              "name": "keyword.operator.wildcard.systemverilog"
+            }
           }
         },
         {
@@ -682,10 +1010,18 @@
           "match": ";",
           "name": "punctuation.terminator.statement.systemverilog"
         },
-        {"include": "#attributes"},
-        {"include": "#comments"},
-        {"include": "#numbers"},
-        {"include": "#strings"}
+        {
+          "include": "#attributes"
+        },
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#numbers"
+        },
+        {
+          "include": "#strings"
+        }
       ]
     },
     "attributes": {
@@ -693,11 +1029,15 @@
         {
           "begin": "\\(\\*(?!\\))",
           "beginCaptures": {
-            "0": {"name": "keyword.control.attribute.systemverilog"}
+            "0": {
+              "name": "keyword.control.attribute.systemverilog"
+            }
           },
           "end": "(?<!\\()\\*\\)",
           "endCaptures": {
-            "0": {"name": "keyword.control.attribute.systemverilog"}
+            "0": {
+              "name": "keyword.control.attribute.systemverilog"
+            }
           },
           "name": "meta.preprocessor.attribute.systemverilog"
         }
@@ -708,26 +1048,36 @@
         {
           "begin": "\\/\\/",
           "beginCaptures": {
-            "0": {"name": "punctuation.definition.comment.systemverilog"}
+            "0": {
+              "name": "punctuation.definition.comment.systemverilog"
+            }
           },
           "end": "$\\n?",
           "name": "comment.line.double-slash.systemverilog",
           "patterns": [
-            {"include": "#comment_highlight"}
+            {
+              "include": "#comment_highlight"
+            }
           ]
         },
         {
           "begin": "\\/\\*",
           "beginCaptures": {
-            "0": {"name": "punctuation.definition.comment.begin.systemverilog"}
+            "0": {
+              "name": "punctuation.definition.comment.begin.systemverilog"
+            }
           },
           "end": "\\*\\/",
           "endCaptures": {
-            "0": {"name": "punctuation.definition.comment.end.systemverilog"}
+            "0": {
+              "name": "punctuation.definition.comment.end.systemverilog"
+            }
           },
           "name": "comment.block.systemverilog",
           "patterns": [
-            {"include": "#comment_highlight"}
+            {
+              "include": "#comment_highlight"
+            }
           ]
         },
         {
@@ -749,7 +1099,9 @@
         {
           "begin": "(?i)((?<=(endchecker))|(?<=(endclass))|(?<=(endclocking))|(?<=(endconfig))|(?<=(endgroup))|(?<=(endinterface))|(?<=(endmodule))|(?<=(endpackage))|(?<=(endprogram))|(?<=(endproperty))|(?<=(endprimitive))|(?<=(endsequence)))(?=(?:\\s*\\:))",
           "beginCaptures": {
-            "2": {"name": "punctuation.definition.label.systemverilog"}
+            "2": {
+              "name": "punctuation.definition.label.systemverilog"
+            }
           },
           "end": "$|(?=(?:\\/(\\/|\\*)))",
           "patterns": [
@@ -757,13 +1109,17 @@
               "match": "\\b([A-Za-z_][A-Za-z0-9_$]*)\\b(?!\\s*::)",
               "name": "entity.name.type.systemverilog"
             },
-            {"include": "#namespaces"}
+            {
+              "include": "#namespaces"
+            }
           ]
         },
         {
           "begin": "(?i)((?<=(endfunction))|(?<=(endtask)))\\s*(\\:)",
           "beginCaptures": {
-            "2": {"name": "punctuation.definition.label.systemverilog"}
+            "2": {
+              "name": "punctuation.definition.label.systemverilog"
+            }
           },
           "end": "$|(?=(?:\\/(\\/|\\*)))",
           "patterns": [
@@ -771,7 +1127,9 @@
               "match": "\\b([A-Za-z_][A-Za-z0-9_$]*)\\b(?!\\s*\\:\\:)",
               "name": "entity.name.function.systemverilog"
             },
-            {"include": "#namespaces"}
+            {
+              "include": "#namespaces"
+            }
           ]
         }
       ]
@@ -790,7 +1148,9 @@
           "comment": "Namespace names",
           "match": "\\b([A-Za-z_][A-Za-z0-9_$]*)(?=(?:\\s*\\:\\:))",
           "captures": {
-            "1": {"name": "entity.name.type.systemverilog"}
+            "1": {
+              "name": "entity.name.type.systemverilog"
+            }
           }
         }
       ]
@@ -801,15 +1161,21 @@
           "comment": "Numeric values.",
           "match": "(?i)([0-9][0-9_]*\\s*)?('s?(b|o|d|h)\\s*([\\da-f_\\?zx]+))",
           "captures": {
-            "1": {"name": "constant.numeric.width.systemverilog"},
-            "2": {"name": "constant.numeric.systemverilog"}
+            "1": {
+              "name": "constant.numeric.width.systemverilog"
+            },
+            "2": {
+              "name": "constant.numeric.systemverilog"
+            }
           }
         },
         {
           "comment": "Unspecified width values.",
           "match": "(?i)(\\'[0|1|x\\b|z\\b])",
           "captures": {
-            "1": {"name": "constant.numeric.systemverilog"}
+            "1": {
+              "name": "constant.numeric.systemverilog"
+            }
           }
         },
         {
@@ -824,40 +1190,72 @@
         {
           "match": "\\b([0-9][0-9_]*)\\s*((f|m|n|u|p)s)\\b",
           "captures": {
-            "0": {"name": "meta.timing.control.systemverilog"},
-            "1": {"name": "constant.numeric.integer.systemverilog"},
-            "2": {"name": "constant.language.time-units.systemverilog"}
+            "0": {
+              "name": "meta.timing.control.systemverilog"
+            },
+            "1": {
+              "name": "constant.numeric.integer.systemverilog"
+            },
+            "2": {
+              "name": "constant.language.time-units.systemverilog"
+            }
           }
         },
         {
           "comment": "1step delay.",
           "match": "(?<!\\#)((\\#))(1step)\\b",
           "captures": {
-            "0": {"name": "meta.timing.control.systemverilog"},
-            "1": {"name": "punctuation.definition.keyword.systemverilog"},
-            "2": {"name": "keyword.operator.timing.systemverilog"},
-            "3": {"name": "constant.language.time-units.systemverilog"}
+            "0": {
+              "name": "meta.timing.control.systemverilog"
+            },
+            "1": {
+              "name": "punctuation.definition.keyword.systemverilog"
+            },
+            "2": {
+              "name": "keyword.operator.timing.systemverilog"
+            },
+            "3": {
+              "name": "constant.language.time-units.systemverilog"
+            }
           }
         },
         {
           "comment": "Timeunits and #delays.",
           "match": "(?<!\\#)((\\#))\\s*([0-9][0-9_]*)\\s*((f|m|n|u|p)s\\b)?",
           "captures": {
-            "0": {"name": "meta.timing.control.systemverilog"},
-            "1": {"name": "punctuation.definition.keyword.systemverilog"},
-            "2": {"name": "keyword.operator.timing.systemverilog"},
-            "3": {"name": "constant.numeric.integer.systemverilog"},
-            "4": {"name": "constant.language.time-units.systemverilog"}
+            "0": {
+              "name": "meta.timing.control.systemverilog"
+            },
+            "1": {
+              "name": "punctuation.definition.keyword.systemverilog"
+            },
+            "2": {
+              "name": "keyword.operator.timing.systemverilog"
+            },
+            "3": {
+              "name": "constant.numeric.integer.systemverilog"
+            },
+            "4": {
+              "name": "constant.language.time-units.systemverilog"
+            }
           }
         },
         {
           "comment": "Sequence and clock delays in the ## format.",
           "match": "(?<!\\#)((\\#\\#))\\s*(([0-9][0-9_]*)|(?=(?:\\[|([A-Za-z_][A-Za-z0-9_$]*))))",
           "captures": {
-            "0": {"name": "meta.timing.control.systemverilog"},
-            "1": {"name": "punctuation.definition.keyword.systemverilog"},
-            "2": {"name": "keyword.operator.timing.systemverilog"},
-            "4": {"name": "constant.numeric.integer.systemverilog"}
+            "0": {
+              "name": "meta.timing.control.systemverilog"
+            },
+            "1": {
+              "name": "punctuation.definition.keyword.systemverilog"
+            },
+            "2": {
+              "name": "keyword.operator.timing.systemverilog"
+            },
+            "4": {
+              "name": "constant.numeric.integer.systemverilog"
+            }
           }
         }
       ]
@@ -867,11 +1265,15 @@
         {
           "begin": "\"",
           "beginCaptures": {
-            "0": {"name": "punctuation.definition.string.begin.systemverilog"}
+            "0": {
+              "name": "punctuation.definition.string.begin.systemverilog"
+            }
           },
           "end": "\"",
           "endCaptures": {
-            "0": {"name": "punctuation.definition.string.end.systemverilog"}
+            "0": {
+              "name": "punctuation.definition.string.end.systemverilog"
+            }
           },
           "name": "string.quoted.double.systemverilog",
           "patterns": [
@@ -904,7 +1306,9 @@
           },
           "name": "section.bracket.square.systemverilog",
           "patterns": [
-            {"include": "#prototype_parens"}
+            {
+              "include": "#prototype_parens"
+            }
           ]
         },
         {
@@ -930,7 +1334,9 @@
           },
           "name": "section.bracket.curly.systemverilog",
           "patterns": [
-            {"include": "#prototype_curly_braces"}
+            {
+              "include": "#prototype_curly_braces"
+            }
           ]
         },
         {
@@ -945,16 +1351,24 @@
         {
           "begin": "(\\#)\\s*(\\()",
           "beginCaptures": {
-            "1": {"name": "keyword.operator.systemverilog"},
-            "2": {"name": "punctuation.section.begin.bracket.round.systemverilog"}
+            "1": {
+              "name": "keyword.operator.systemverilog"
+            },
+            "2": {
+              "name": "punctuation.section.begin.bracket.round.systemverilog"
+            }
           },
           "end": "\\)",
           "endCaptures": {
-            "0": {"name": "punctuation.section.end.bracket.round.systemverilog"}
+            "0": {
+              "name": "punctuation.section.end.bracket.round.systemverilog"
+            }
           },
           "name": "section.bracket.round.systemverilog",
           "patterns": [
-            {"include": "#prototype_parens"}
+            {
+              "include": "#prototype_parens"
+            }
           ]
         }
       ]
@@ -976,7 +1390,9 @@
           },
           "name": "section.bracket.round.systemverilog",
           "patterns": [
-            {"include": "#prototype_parens"}
+            {
+              "include": "#prototype_parens"
+            }
           ]
         },
         {
@@ -985,8 +1401,6 @@
         }
       ]
     },
-
-
     "variable_types": {
       "patterns": [
         {
@@ -1065,7 +1479,9 @@
           "match": "(?i)\\b(genvar)\\b",
           "name": "storage.type.genvar.systemverilog"
         },
-        {"include": "#variable_types"}
+        {
+          "include": "#variable_types"
+        }
       ]
     },
     "type_declaration": {
@@ -1074,8 +1490,12 @@
           "comment": "DPI function import to make sure keywords are colored in this one.",
           "begin": "^\\s*(import|export)\\s+(\"DPI\"|\"DPI-C\")",
           "beginCaptures": {
-            "1": {"name": "keyword.control.import.systemverilog"},
-            "2": {"name": "string.other.systemverilog"}
+            "1": {
+              "name": "keyword.control.import.systemverilog"
+            },
+            "2": {
+              "name": "string.other.systemverilog"
+            }
           },
           "end": "(?=(?:\\;))",
           "name": "meta.dpi-import-declaration.systemverilog",
@@ -1088,14 +1508,20 @@
               "match": "\\b([A-Za-z_][A-Za-z0-9_$]*)\\s*(?=(?:\\())",
               "name": "entity.name.function.systemverilog"
             },
-            {"include": "#prototype"},
-            {"include": "#variable_types"}
+            {
+              "include": "#prototype"
+            },
+            {
+              "include": "#variable_types"
+            }
           ]
         },
         {
           "begin": "^\\s*(typedef)\\b",
           "beginCaptures": {
-            "0": {"name": "keyword.control.typedef.systemverilog"}
+            "0": {
+              "name": "keyword.control.typedef.systemverilog"
+            }
           },
           "end": "(?=(?:\\;))",
           "name": "meta.type-declaration.systemverilog",
@@ -1118,12 +1544,20 @@
                 }
               },
               "patterns": [
-                {"include": "#prototype_parens"}
+                {
+                  "include": "#prototype_parens"
+                }
               ]
             },
-            {"include": "#prototype"},
-            {"include": "#operators"},
-            {"include": "#net_types"},
+            {
+              "include": "#prototype"
+            },
+            {
+              "include": "#operators"
+            },
+            {
+              "include": "#net_types"
+            },
             {
               "match": "\\b([A-Za-z_][A-Za-z0-9_$]*)\\b",
               "name": "support.type.posix-reserved.systemverilog"
@@ -1132,44 +1566,54 @@
         }
       ]
     },
-
-
     "compiler_directive": {
       "patterns": [
         {
           "begin": "(\\`)(__FILE__|__LINE__|(begin|end)_keywords|celldefine|default_nettype|define|else|elsif|endcelldefine|endif|ifdef|ifndef|include|line|pragma|resetall|timescale|unconnected_drive\\s+pull(1|0)|nounconnected_drive|undef|undefineall)\\b",
           "beginCaptures": {
-            "1": {"name": "punctuation.definition.directive.systemverilog"},
-            "2": {"name": "keyword.control.directive.systemverilog"}
+            "1": {
+              "name": "punctuation.definition.directive.systemverilog"
+            },
+            "2": {
+              "name": "keyword.control.directive.systemverilog"
+            }
           },
           "end": "(?=(?:\\/\\/|\\/\\*))|\\n",
           "name": "meta.preprocessor.systemverilog",
           "patterns": [
-            {"include": "#prototype"}
+            {
+              "include": "#prototype"
+            }
           ]
         },
         {
           "begin": "(?i)(^\\s*)(`protect(ed|))\\b",
           "beginCaptures": {
-            "0": {"name": "keyword.control.directive.protected-region.systemverilog"}
+            "0": {
+              "name": "keyword.control.directive.protected-region.systemverilog"
+            }
           },
           "end": "(?i)(^\\s*)(`endprotect(ed|))\\b",
           "endCaptures": {
-            "0": {"name": "keyword.control.directive.protected-region.systemverilog"}
+            "0": {
+              "name": "keyword.control.directive.protected-region.systemverilog"
+            }
           },
           "name": "meta.preprocessor.systemverilog"
         },
         {
           "match": "(\\`)([A-Za-z_][A-Za-z0-9_$]*)\\b",
           "captures": {
-            "1": {"name": "punctuation.definition.directive.systemverilog"},
-            "2": {"name": "support.function.user-defined-macro.systemverilog"}
+            "1": {
+              "name": "punctuation.definition.directive.systemverilog"
+            },
+            "2": {
+              "name": "support.function.user-defined-macro.systemverilog"
+            }
           }
         }
       ]
     },
-
-
     "procedural_blocks": {
       "patterns": [
         {
@@ -1186,37 +1630,49 @@
         }
       ]
     },
-
-
     "blocks": {
       "patterns": [
         {
           "begin": "\\b(begin)\\b",
           "beginCaptures": {
-            "0": {"name": "keyword.control.systemverilog"}
+            "0": {
+              "name": "keyword.control.systemverilog"
+            }
           },
           "end": "\\b(end)\\b",
           "endCaptures": {
-            "0": {"name": "keyword.control.systemverilog"}
+            "0": {
+              "name": "keyword.control.systemverilog"
+            }
           },
           "name": "meta.sequential-block.systemverilog",
           "patterns": [
-            {"include": "#prototype_statements"},
-            {"include": "#property"}
+            {
+              "include": "#prototype_statements"
+            },
+            {
+              "include": "#property"
+            }
           ]
         },
         {
           "begin": "\\b(fork)\\b",
           "beginCaptures": {
-            "0": {"name": "keyword.control.systemverilog"}
+            "0": {
+              "name": "keyword.control.systemverilog"
+            }
           },
           "end": "\\b(join(_any|_none|))\\b",
           "endCaptures": {
-            "0": {"name": "keyword.control.systemverilog"}
+            "0": {
+              "name": "keyword.control.systemverilog"
+            }
           },
           "name": "meta.parallel-block.systemverilog",
           "patterns": [
-            {"include": "#prototype_statements"}
+            {
+              "include": "#prototype_statements"
+            }
           ]
         },
         {
@@ -1229,62 +1685,84 @@
         }
       ]
     },
-
-
     "statements": {
       "patterns": [
         {
           "comment": "Conditional statements",
           "match": "(?i)(\\b(priority|unique|unique0)\\s+)?\\b(if|else)\\b",
           "captures": {
-            "2": {"name": "keyword.control.conditional.systemverilog"},
-            "3": {"name": "keyword.control.conditional.systemverilog"}
+            "2": {
+              "name": "keyword.control.conditional.systemverilog"
+            },
+            "3": {
+              "name": "keyword.control.conditional.systemverilog"
+            }
           }
         },
         {
           "comment": "Rand|Case statements",
           "begin": "(?i)(\\b(priority|unique|unique0)\\s+)?\\b((rand|)case(x|z|))\\b",
           "beginCaptures": {
-            "2": {"name": "keyword.control.conditional.systemverilog"},
-            "3": {"name": "keyword.control.conditional.systemverilog"}
+            "2": {
+              "name": "keyword.control.conditional.systemverilog"
+            },
+            "3": {
+              "name": "keyword.control.conditional.systemverilog"
+            }
           },
           "end": "(?i)\\b(endcase)\\b",
           "endCaptures": {
-            "0": {"name": "keyword.control.conditional.systemverilog"}
+            "0": {
+              "name": "keyword.control.conditional.systemverilog"
+            }
           },
           "name": "meta.case-block.systemverilog",
           "patterns": [
-            {"include": "#prototype_statements"}
+            {
+              "include": "#prototype_statements"
+            }
           ]
         },
         {
           "comment": "Randsequence statements",
           "begin": "(?i)^\\s*(randsequence)\\b",
           "beginCaptures": {
-            "0": {"name": "keyword.control.randsequence.systemverilog"}
+            "0": {
+              "name": "keyword.control.randsequence.systemverilog"
+            }
           },
           "end": "^\\s*(endsequence)\\b",
           "endCaptures": {
-            "0": {"name": "keyword.control.randsequence.systemverilog"}
+            "0": {
+              "name": "keyword.control.randsequence.systemverilog"
+            }
           },
           "name": "meta.randsequence.systemverilog",
           "patterns": [
-            {"include": "#prototype_statements"}
+            {
+              "include": "#prototype_statements"
+            }
           ]
         },
         {
           "comment": "do-while loop statements",
           "begin": "\\b(do)\\b",
           "beginCaptures": {
-            "0": {"name": "keyword.control.systemverilog"}
+            "0": {
+              "name": "keyword.control.systemverilog"
+            }
           },
           "end": "\\b(while)\\b",
           "endCaptures": {
-            "0": {"name": "keyword.control.systemverilog"}
+            "0": {
+              "name": "keyword.control.systemverilog"
+            }
           },
           "name": "meta.do-while-block.systemverilog",
           "patterns": [
-            {"include": "#prototype_statements"}
+            {
+              "include": "#prototype_statements"
+            }
           ]
         },
         {
@@ -1294,15 +1772,23 @@
         {
           "match": "(?i)\\b(assert|assume|cover)\\s+(\\#0|final)\\b",
           "captures": {
-            "1": {"name": "keyword.control.deferred-assertion.systemverilog"},
-            "2": {"name": "keyword.control.deferred-assertion.systemverilog"}
+            "1": {
+              "name": "keyword.control.deferred-assertion.systemverilog"
+            },
+            "2": {
+              "name": "keyword.control.deferred-assertion.systemverilog"
+            }
           }
         },
         {
           "match": "(?i)\\b(assert|assume|cover|restrict)\\s+(property)\\b",
           "captures": {
-            "1": {"name": "keyword.control.assertion-statement.systemverilog"},
-            "2": {"name": "keyword.control.assertion-statement.systemverilog"}
+            "1": {
+              "name": "keyword.control.assertion-statement.systemverilog"
+            },
+            "2": {
+              "name": "keyword.control.assertion-statement.systemverilog"
+            }
           }
         },
         {
@@ -1313,8 +1799,12 @@
           "comment": "Process control for forks",
           "match": "(?i)\\b(disable|wait)(\\s+(fork))?\\b",
           "captures": {
-            "1": {"name": "keyword.control.systemverilog"},
-            "3": {"name": "keyword.control.systemverilog"}
+            "1": {
+              "name": "keyword.control.systemverilog"
+            },
+            "3": {
+              "name": "keyword.control.systemverilog"
+            }
           }
         },
         {
@@ -1325,30 +1815,39 @@
           "comment": "Let construct.",
           "begin": "(?i)^\\s*(let)\\b",
           "beginCaptures": {
-            "1": {"name": "keyword.other.let-construct.systemverilog"}
+            "1": {
+              "name": "keyword.other.let-construct.systemverilog"
+            }
           },
           "end": "(?=(?:\\;))",
           "name": "meta.let-construct.systemverilog",
           "patterns": [
-            {"include": "#prototype_statements"}
+            {
+              "include": "#prototype_statements"
+            }
           ]
         },
         {
           "comment": "Generate statement",
           "begin": "(?i)^\\s*(generate)\\b",
           "beginCaptures": {
-            "1": {"name": "keyword.control.generate.systemverilog"}
+            "1": {
+              "name": "keyword.control.generate.systemverilog"
+            }
           },
           "end": "(?i)^\\s*(endgenerate)\\b",
           "endCaptures": {
-            "1": {"name": "keyword.control.generate.systemverilog"}
+            "1": {
+              "name": "keyword.control.generate.systemverilog"
+            }
           },
           "name": "meta.generate-block.systemverilog",
           "patterns": [
-            {"include": "#prototype_statements"}
+            {
+              "include": "#prototype_statements"
+            }
           ]
         },
-
         {
           "comment": "Stray keyword collection",
           "match": "(?i)\\b(endcase|endgenerate|endspecify)\\b",
@@ -1401,8 +1900,12 @@
         {
           "match": "(\\@(?=(?:\\s*(\\(|\\w|\\*))))",
           "captures": {
-            "0": {"name": "punctuation.definition.keyword.systemverilog"},
-            "1": {"name": "keyword.operator.timing.systemverilog"}
+            "0": {
+              "name": "punctuation.definition.keyword.systemverilog"
+            },
+            "1": {
+              "name": "keyword.operator.timing.systemverilog"
+            }
           }
         }
       ]
@@ -1526,18 +2029,20 @@
         }
       ]
     },
-
-
     "property": {
       "patterns": [
         {
           "begin": "(?i)^\\s*(property)\\b",
           "beginCaptures": {
-            "1": {"name": "storage.type.property.systemverilog"}
+            "1": {
+              "name": "storage.type.property.systemverilog"
+            }
           },
           "end": "(?i)^\\s*(endproperty)\\b",
           "endCaptures": {
-            "1": {"name": "storage.type.property.systemverilog"}
+            "1": {
+              "name": "storage.type.property.systemverilog"
+            }
           },
           "name": "meta.property.systemverilog",
           "patterns": [
@@ -1549,13 +2054,19 @@
                 {
                   "match": "\\b([A-Za-z_][A-Za-z0-9_$]*)\\s*(?=(?:\\(|\\;))",
                   "captures": {
-                    "1": {"name": "entity.name.type.systemverilog"}
+                    "1": {
+                      "name": "entity.name.type.systemverilog"
+                    }
                   }
                 },
-                {"include": "#prototype"}
+                {
+                  "include": "#prototype"
+                }
               ]
             },
-            {"include": "#prototype_statements"}
+            {
+              "include": "#prototype_statements"
+            }
           ]
         },
         {
@@ -1569,11 +2080,15 @@
         {
           "begin": "(?i)^\\s*(sequence)\\b",
           "beginCaptures": {
-            "1": {"name": "storage.type.sequence.systemverilog"}
+            "1": {
+              "name": "storage.type.sequence.systemverilog"
+            }
           },
           "end": "(?i)^\\s*(endsequence)\\b",
           "endCaptures": {
-            "1": {"name": "storage.type.sequence.systemverilog"}
+            "1": {
+              "name": "storage.type.sequence.systemverilog"
+            }
           },
           "name": "meta.sequence.systemverilog",
           "patterns": [
@@ -1585,13 +2100,19 @@
                 {
                   "match": "\\b([A-Za-z_][A-Za-z0-9_$]*)\\s*(?=(?:\\(|\\;))",
                   "captures": {
-                    "1": {"name": "entity.name.type.systemverilog"}
+                    "1": {
+                      "name": "entity.name.type.systemverilog"
+                    }
                   }
                 },
-                {"include": "#prototype"}
+                {
+                  "include": "#prototype"
+                }
               ]
             },
-            {"include": "#prototype_statements"}
+            {
+              "include": "#prototype_statements"
+            }
           ]
         },
         {
@@ -1600,19 +2121,23 @@
         }
       ]
     },
-
-
     "functions": {
       "patterns": [
-        {"include": "#function_abstract"},
+        {
+          "include": "#function_abstract"
+        },
         {
           "begin": "(?i)\\b(function)\\b",
           "beginCaptures": {
-            "1": {"name": "storage.type.function.systemverilog"}
+            "1": {
+              "name": "storage.type.function.systemverilog"
+            }
           },
           "end": "(?i)\\b(endfunction)\\b",
           "endCaptures": {
-            "1": {"name": "storage.type.function.systemverilog"}
+            "1": {
+              "name": "storage.type.function.systemverilog"
+            }
           },
           "name": "meta.function.systemverilog",
           "patterns": [
@@ -1624,26 +2149,42 @@
                 {
                   "match": "((\\:\\:)\\s*)?([A-Za-z_][A-Za-z0-9_$]*)\\s*(?=(?:\\(|\\#\\(|\\;))",
                   "captures": {
-                    "2": {"name": "punctuation.separator.namespace.access.systemverilog"},
-                    "3": {"name": "entity.name.function.systemverilog"}
+                    "2": {
+                      "name": "punctuation.separator.namespace.access.systemverilog"
+                    },
+                    "3": {
+                      "name": "entity.name.function.systemverilog"
+                    }
                   }
                 },
-                {"include": "#uvm_prototype"},
-                {"include": "#prototype"},
-                {"include": "#variable_types"}
+                {
+                  "include": "#uvm_prototype"
+                },
+                {
+                  "include": "#prototype"
+                },
+                {
+                  "include": "#variable_types"
+                }
               ]
             },
-            {"include": "#prototype_statements"}
+            {
+              "include": "#prototype_statements"
+            }
           ]
         },
         {
           "begin": "(?i)\\b(task)\\b",
           "beginCaptures": {
-            "1": {"name": "storage.type.function.systemverilog"}
+            "1": {
+              "name": "storage.type.function.systemverilog"
+            }
           },
           "end": "(?i)\\b(endtask)\\b",
           "endCaptures": {
-            "1": {"name": "storage.type.function.systemverilog"}
+            "1": {
+              "name": "storage.type.function.systemverilog"
+            }
           },
           "name": "meta.task.systemverilog",
           "patterns": [
@@ -1655,16 +2196,28 @@
                 {
                   "match": "((\\:\\:)\\s*)?([A-Za-z_][A-Za-z0-9_$]*)\\s*(?=(?:\\(|\\#\\(|\\;))",
                   "captures": {
-                    "2": {"name": "punctuation.separator.namespace.access.systemverilog"},
-                    "3": {"name": "entity.name.function.systemverilog"}
+                    "2": {
+                      "name": "punctuation.separator.namespace.access.systemverilog"
+                    },
+                    "3": {
+                      "name": "entity.name.function.systemverilog"
+                    }
                   }
                 },
-                {"include": "#uvm_prototype"},
-                {"include": "#prototype"},
-                {"include": "#variable_types"}
+                {
+                  "include": "#uvm_prototype"
+                },
+                {
+                  "include": "#prototype"
+                },
+                {
+                  "include": "#variable_types"
+                }
               ]
             },
-            {"include": "#prototype_statements"}
+            {
+              "include": "#prototype_statements"
+            }
           ]
         },
         {
@@ -1678,8 +2231,12 @@
         {
           "begin": "(?i)^\\s*(pure)\\s+(virtual)\\b",
           "beginCaptures": {
-            "1": {"name": "storage.modifier.qualifier.systemverilog"},
-            "2": {"name": "storage.modifier.qualifier.systemverilog"}
+            "1": {
+              "name": "storage.modifier.qualifier.systemverilog"
+            },
+            "2": {
+              "name": "storage.modifier.qualifier.systemverilog"
+            }
           },
           "end": "(?=(?:\\;))",
           "name": "meta.function.pure-virtual-declaration.systemverilog",
@@ -1692,22 +2249,30 @@
               "match": "\\b([A-Za-z_][A-Za-z0-9_$]*)\\s*(?=(?:\\(|\\;))",
               "name": "entity.name.function.systemverilog"
             },
-            {"include": "#prototype"},
-            {"include": "#variable_types"}
+            {
+              "include": "#prototype"
+            },
+            {
+              "include": "#variable_types"
+            }
           ]
         }
       ]
     },
-
-
     "constraints": {
       "patterns": [
         {
           "begin": "(?i)^\\s*(pure)\\s+((static)\\s+)?\\b(constraint)\\b",
           "beginCaptures": {
-            "1": {"name": "storage.modifier.qualifier.systemverilog"},
-            "3": {"name": "storage.modifier.lifetime.systemverilog"},
-            "4": {"name": "storage.type.systemverilog"}
+            "1": {
+              "name": "storage.modifier.qualifier.systemverilog"
+            },
+            "3": {
+              "name": "storage.modifier.lifetime.systemverilog"
+            },
+            "4": {
+              "name": "storage.type.systemverilog"
+            }
           },
           "end": "(?=(?:\\;))",
           "name": "meta.constraint.declaration.systemverilog",
@@ -1715,18 +2280,28 @@
             {
               "match": "((\\:\\:)\\s*)?\\b([A-Za-z_][A-Za-z0-9_$]*)\\s*(?=(?:\\(|\\;))",
               "captures": {
-                "2": {"name": "punctuation.separator.namespace.access.systemverilog"},
-                "3": {"name": "entity.name.constraint.systemverilog"}
+                "2": {
+                  "name": "punctuation.separator.namespace.access.systemverilog"
+                },
+                "3": {
+                  "name": "entity.name.constraint.systemverilog"
+                }
               }
             },
-            {"include": "#prototype"}
+            {
+              "include": "#prototype"
+            }
           ]
         },
         {
           "begin": "(?i)^\\s*((static)\\s+)?(constraint)\\b",
           "beginCaptures": {
-            "2": {"name": "storage.modifier.lifetime.systemverilog"},
-            "3": {"name": "storage.type.constraint.systemverilog"}
+            "2": {
+              "name": "storage.modifier.lifetime.systemverilog"
+            },
+            "3": {
+              "name": "storage.type.constraint.systemverilog"
+            }
           },
           "comment": " ';' is for the implicit form of an external constraint.",
           "end": "(?<=\\}|\\;)",
@@ -1738,14 +2313,18 @@
               "end": "(?=(?:\\{|\\;))",
               "name": "meta.constraint.declaration.systemverilog",
               "patterns": [
-                {"include": "#prototype"},
+                {
+                  "include": "#prototype"
+                },
                 {
                   "match": "\\b([A-Za-z_][A-Za-z0-9_$]*)\\b",
                   "name": "entity.name.constraint.systemverilog"
                 }
               ]
             },
-            {"include": "#prototype"}
+            {
+              "include": "#prototype"
+            }
           ]
         }
       ]
@@ -1770,19 +2349,23 @@
         }
       ]
     },
-
-
     "class_declaration": {
       "patterns": [
         {
           "begin": "(?i)^\\s*(interface)\\s+(class)\\b",
           "beginCaptures": {
-            "1": {"name": "storage.type.class.systemverilog"},
-            "2": {"name": "storage.type.class.systemverilog"}
+            "1": {
+              "name": "storage.type.class.systemverilog"
+            },
+            "2": {
+              "name": "storage.type.class.systemverilog"
+            }
           },
           "end": "(?i)^\\s*(endclass)\\b",
           "endCaptures": {
-            "1": {"name": "storage.type.class.systemverilog"}
+            "1": {
+              "name": "storage.type.class.systemverilog"
+            }
           },
           "name": "meta.interface-class.systemverilog",
           "patterns": [
@@ -1794,13 +2377,17 @@
                 {
                   "match": "\\b([A-Za-z_][A-Za-z0-9_$]*)\\s*(?=(?:\\#\\(|\\;|extends\\b))",
                   "captures": {
-                    "1": {"name": "entity.name.type.systemverilog"}
+                    "1": {
+                      "name": "entity.name.type.systemverilog"
+                    }
                   }
                 },
                 {
                   "begin": "\\b(extends)\\b",
                   "beginCaptures": {
-                    "1": {"name": "storage.modifier.systemverilog"}
+                    "1": {
+                      "name": "storage.modifier.systemverilog"
+                    }
                   },
                   "end": "(?=(?:\\;))",
                   "name": "meta.class.extension.systemverilog",
@@ -1809,32 +2396,60 @@
                       "match": "([A-Za-z_][A-Za-z0-9_$]*)",
                       "name": "entity.other.inherited-class.systemverilog"
                     },
-                    {"include": "#prototype"},
-                    {"include": "#operators"}
+                    {
+                      "include": "#prototype"
+                    },
+                    {
+                      "include": "#operators"
+                    }
                   ]
                 },
-                {"include": "#prototype"},
-                {"include": "#operators"}
+                {
+                  "include": "#prototype"
+                },
+                {
+                  "include": "#operators"
+                }
               ]
             },
-            {"include": "#uvm_prototype"},
-            {"include": "#prototype"},
-            {"include": "#function_abstract"},
-            {"include": "#operators"},
-            {"include": "#system_tasks"},
-            {"include": "#type_declaration"},
-            {"include": "#variable_types"}
+            {
+              "include": "#uvm_prototype"
+            },
+            {
+              "include": "#prototype"
+            },
+            {
+              "include": "#function_abstract"
+            },
+            {
+              "include": "#operators"
+            },
+            {
+              "include": "#system_tasks"
+            },
+            {
+              "include": "#type_declaration"
+            },
+            {
+              "include": "#variable_types"
+            }
           ]
         },
         {
           "begin": "(?i)^\\s*((virtual)\\s*)?(class)\\b",
           "beginCaptures": {
-            "2": {"name": "storage.type.class.systemverilog"},
-            "3": {"name": "storage.type.class.systemverilog"}
+            "2": {
+              "name": "storage.type.class.systemverilog"
+            },
+            "3": {
+              "name": "storage.type.class.systemverilog"
+            }
           },
           "end": "(?i)^\\s*(endclass)\\b",
           "endCaptures": {
-            "1": {"name": "storage.type.class.systemverilog"}
+            "1": {
+              "name": "storage.type.class.systemverilog"
+            }
           },
           "name": "meta.class.systemverilog",
           "patterns": [
@@ -1846,13 +2461,17 @@
                 {
                   "match": "\\b([A-Za-z_][A-Za-z0-9_$]*)\\s*(?=(?:\\#\\(|\\;|extends\\b|implements\\b))",
                   "captures": {
-                    "1": {"name": "entity.name.type.systemverilog"}
+                    "1": {
+                      "name": "entity.name.type.systemverilog"
+                    }
                   }
                 },
                 {
                   "begin": "\\b(extends)\\b",
                   "beginCaptures": {
-                    "1": {"name": "storage.modifier.systemverilog"}
+                    "1": {
+                      "name": "storage.modifier.systemverilog"
+                    }
                   },
                   "end": "(?=(?:\\b(implements)\\b))|(?=(?:\\;))",
                   "name": "meta.class.extension.systemverilog",
@@ -1861,14 +2480,20 @@
                       "match": "([A-Za-z_][A-Za-z0-9_$]*)",
                       "name": "entity.other.inherited-class.systemverilog"
                     },
-                    {"include": "#prototype"},
-                    {"include": "#operators"}
+                    {
+                      "include": "#prototype"
+                    },
+                    {
+                      "include": "#operators"
+                    }
                   ]
                 },
                 {
                   "begin": "\\b(implements)\\b",
                   "beginCaptures": {
-                    "1": {"name": "storage.modifier.systemverilog"}
+                    "1": {
+                      "name": "storage.modifier.systemverilog"
+                    }
                   },
                   "end": "(?=(?:\\;))",
                   "name": "meta.class.implementation.systemverilog",
@@ -1877,25 +2502,55 @@
                       "match": "([A-Za-z_][A-Za-z0-9_$]*)",
                       "name": "entity.other.inherited-class.systemverilog"
                     },
-                    {"include": "#prototype"},
-                    {"include": "#operators"}
+                    {
+                      "include": "#prototype"
+                    },
+                    {
+                      "include": "#operators"
+                    }
                   ]
                 },
-                {"include": "#prototype"},
-                {"include": "#operators"}
+                {
+                  "include": "#prototype"
+                },
+                {
+                  "include": "#operators"
+                }
               ]
             },
-            {"include": "#uvm_prototype"},
-            {"include": "#prototype"},
-            {"include": "#class_declaration"},
-            {"include": "#constraints"},
-            {"include": "#covergroup_declaration"},
-            {"include": "#external_declarations"},
-            {"include": "#functions"},
-            {"include": "#operators"},
-            {"include": "#system_tasks"},
-            {"include": "#type_declaration"},
-            {"include": "#variable_types"}
+            {
+              "include": "#uvm_prototype"
+            },
+            {
+              "include": "#prototype"
+            },
+            {
+              "include": "#class_declaration"
+            },
+            {
+              "include": "#constraints"
+            },
+            {
+              "include": "#covergroup_declaration"
+            },
+            {
+              "include": "#external_declarations"
+            },
+            {
+              "include": "#functions"
+            },
+            {
+              "include": "#operators"
+            },
+            {
+              "include": "#system_tasks"
+            },
+            {
+              "include": "#type_declaration"
+            },
+            {
+              "include": "#variable_types"
+            }
           ]
         },
         {
@@ -1904,21 +2559,23 @@
         }
       ]
     },
-
-
     "covergroup_declaration": {
       "patterns": [
         {
           "begin": "(?i)^\\s*(covergroup)\\b",
           "beginCaptures": {
-            "1": {"name": "storage.type.coverage.systemverilog"}
+            "1": {
+              "name": "storage.type.coverage.systemverilog"
+            }
           },
           "end": "(?i)^\\s*(endgroup)\\b",
           "endCaptures": {
-            "1": {"name": "storage.type.coverage.systemverilog"}
+            "1": {
+              "name": "storage.type.coverage.systemverilog"
+            }
           },
           "name": "meta.coverage.systemverilog",
-          "patterns":[
+          "patterns": [
             {
               "comment": "Covergroup declaration construct to identify the entity name.",
               "begin": "\\G",
@@ -1929,42 +2586,65 @@
                   "comment": "The name is followed by either a ';', a port list, a clocking event or 'with function sample' expression.",
                   "match": "\\b([A-Za-z_][A-Za-z0-9_$]*)\\s*(?=(?:\\@|\\(|\\;|\\s+(with)\\b))",
                   "captures": {
-                    "1": {"name": "entity.name.type.systemverilog"}
+                    "1": {
+                      "name": "entity.name.type.systemverilog"
+                    }
                   }
                 },
                 {
                   "match": "\\b(with)\\s+(function)\\s+(sample)\\b",
                   "captures": {
-                    "1": {"name": "keyword.other.sample-override.systemverilog"},
-                    "2": {"name": "storage.type.function.systemverilog"},
-                    "3": {"name": "keyword.other.sample-override.systemverilog"}
+                    "1": {
+                      "name": "keyword.other.sample-override.systemverilog"
+                    },
+                    "2": {
+                      "name": "storage.type.function.systemverilog"
+                    },
+                    "3": {
+                      "name": "keyword.other.sample-override.systemverilog"
+                    }
                   }
                 },
-                {"include": "#prototype"}
+                {
+                  "include": "#prototype"
+                }
               ]
             },
             {
               "match": "(?i)\\b([A-Za-z_][A-Za-z0-9_$]*)\\b(?=(?:\\s*\\:))",
               "captures": {
-                "1": {"name": "entity.name.type.systemverilog"}
+                "1": {
+                  "name": "entity.name.type.systemverilog"
+                }
               }
             },
             {
               "begin": "(?i)\\b(coverpoint|cross)\\b",
               "beginCaptures": {
-                "1": {"name": "storage.type.coverpoint.systemverilog"}
+                "1": {
+                  "name": "storage.type.coverpoint.systemverilog"
+                }
               },
               "end": "(?<=\\}|\\;)",
               "name": "meta.coverpoint.declaration.systemverilog",
               "patterns": [
-                {"include": "#prototype_curly_braces"}
-
+                {
+                  "include": "#prototype_curly_braces"
+                }
               ]
             },
-            {"include": "#prototype"},
-            {"include": "#operators"},
-            {"include": "#variable_types"},
-            {"include": "#uvm_types"}
+            {
+              "include": "#prototype"
+            },
+            {
+              "include": "#operators"
+            },
+            {
+              "include": "#variable_types"
+            },
+            {
+              "include": "#uvm_types"
+            }
           ]
         },
         {
@@ -1981,15 +2661,17 @@
         }
       ]
     },
-
-
     "uvm": {
       "patterns": [
         {
           "match": "(\\`)(uvm_(component_(end|param_utils(_begin|)|registry|utils(_begin|))|error|fatal|field_utils_(begin|end)|info|object_(param_utils(_begin|)|registry|utils(_begin|_end|))|warning))\\b",
-          "captures" : {
-            "1": {"name": "punctuation.definition.macro.systemverilog"},
-            "2": {"name": "support.function.uvm.macro.systemverilog"}
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.macro.systemverilog"
+            },
+            "2": {
+              "name": "support.function.uvm.macro.systemverilog"
+            }
           }
         },
         {
@@ -2001,7 +2683,7 @@
               "name": "support.class.uvm.systemverilog"
             },
             {
-              "match": "\\b(uvm_(agent|algorithmic_comparator|analysis_((ex|)port|imp|imp\\w+)|barrier|built_in_(clone|comp|converter|pair)|callback(_iter|)|callbacks(_objection|)|class_(clone|comp|converter|pair)|cmdline_processor|comparer|component(_registry|)|config_db(_options|)|converter|domain|driver|env|event(_callback|)|factory|hdl_path_concat|heartbeat|in_order_(built_in_|class_|)comparator|line_printer|mem(_region|(_shared|_single|)_access_seq|(_single|)_walk_seq|)|mem_mam(_cfg|_policy|)|monitor|object(_registry|_string_pool|_wrapper|)|objection(_callback|)|packer|phase|pool|port_(base|component(_base|))|printer(_knobs|)|push_(driver|sequencer)|queue|random_stimulus|recorder|reg(_access_seq|_adapter|_backdoor|_bit_bash_seq|_block|_bus_op|_cbs|_field|_fifo|_file|_frontdoor|_hw_reset_seq|_indirect_data|_item|_map|_mem_( access_seq|built_in_seq|hdl_paths_seq|shared_access_seq)|_predictor|_read_only_cbs|_sequence|_(shared|single)_access_seq|_single_bit_bash_seq|_tlm_adapter|_write_only_cbs|)|report_(catcher|handler|object|server)|resource(_base|_(class_|sprint_|)converter|_db(_options|)|_default_converter(s|)|_options|_pool|_types|)|root|scoreboard|seq_item_pull_((ex|)port|imp)|sequence(_base|_item|_library|)|sequencer(_base|_param_base|)|sqr_if_base|subscriber|table_printer|test|tlm_(analysis_fifo|b_(initiator|target)_socket(_base|)|b_passthrough_(initiator|target)_socket(_base|)|b_transport_((ex|)port|imp)|extension(_base|)|fifo(_base|)|generic_payload|gp|if(_base|)|nb_(initiator|target)_socket(_base|)|nb_passthrough_(initiator|target)_socket(_base|)|nb_transport_(b|f)w_((ex|)port|imp)|(req_rsp|transport)_channel|time)|transaction|tree_printer|utils|vcs_recorder|vreg(_field|)(_cbs|)))\\b",
+              "match": "\\b(uvm_(agent|algorithmic_comparator|analysis_((ex|)port|imp|imp\\w+)|blocking_get_port|barrier|built_in_(clone|comp|converter|pair)|callback(_iter|)|callbacks(_objection|)|class_(clone|comp|converter|pair)|cmdline_processor|comparer|component(_registry|)|config_db(_options|)|converter|domain|driver|env|event(_callback|)|factory|hdl_path_concat|heartbeat|in_order_(built_in_|class_|)comparator|line_printer|mem(_region|(_shared|_single|)_access_seq|(_single|)_walk_seq|)|mem_mam(_cfg|_policy|)|monitor|object(_registry|_string_pool|_wrapper|)|objection(_callback|)|packer|phase|pool|port_(base|component(_base|))|printer(_knobs|)|push_(driver|sequencer)|queue|random_stimulus|recorder|reg(_access_seq|_adapter|_backdoor|_bit_bash_seq|_block|_bus_op|_cbs|_field|_fifo|_file|_frontdoor|_hw_reset_seq|_indirect_data|_item|_map|_mem_( access_seq|built_in_seq|hdl_paths_seq|shared_access_seq)|_predictor|_read_only_cbs|_sequence|_(shared|single)_access_seq|_single_bit_bash_seq|_tlm_adapter|_write_only_cbs|)|report_(catcher|handler|object|server)|resource(_base|_(class_|sprint_|)converter|_db(_options|)|_default_converter(s|)|_options|_pool|_types|)|root|scoreboard|seq_item_pull_((ex|)port|imp)|sequence(_base|_item|_library|)|sequencer(_base|_param_base|)|sqr_if_base|subscriber|table_printer|test|tlm_(analysis_fifo|b_(initiator|target)_socket(_base|)|b_passthrough_(initiator|target)_socket(_base|)|b_transport_((ex|)port|imp)|extension(_base|)|fifo(_base|)|generic_payload|gp|if(_base|)|nb_(initiator|target)_socket(_base|)|nb_passthrough_(initiator|target)_socket(_base|)|nb_transport_(b|f)w_((ex|)port|imp)|(req_rsp|transport)_channel|time)|transaction|tree_printer|utils|vcs_recorder|vreg(_field|)(_cbs|)))\\b",
               "name": "support.class.uvm.systemverilog"
             }
           ]

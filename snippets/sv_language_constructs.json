@@ -30,8 +30,8 @@
     "prefix": "repeat",
     "body": [
       "repeat (${1:times}) begin",
-      "\t$0",
-      "end $0"
+      "\t$1",
+      "end $2"
     ],
     "description": "repeat (...) begin ... end"
   },
@@ -48,8 +48,8 @@
     "prefix": "initial",
     "body": [
       "initial begin",
-      "\t$0",
-      "end $0"
+      "\t$1",
+      "end $2"
     ],
     "description": "initial begin ... end"
   },
