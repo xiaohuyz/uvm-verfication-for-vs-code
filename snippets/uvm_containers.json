@@ -7,10 +7,12 @@
         ],
         "body": [
             "class ${1:$TM_FILENAME_BASE} extends ${2:uvm_object};",
+            "\t$3",
             "\t`uvm_object_utils($1);\n",
             "\tfunction new(string name = \"$1\");",
             "\t\tsuper.new(name);",
             "\tendfunction: new",
+            "\n",
             "\t$0",
             "endclass: $1\n"
         ],
@@ -20,10 +22,12 @@
         "prefix": "uvm_object_with_parameters",
         "body": [
             "class ${1:$TM_FILENAME_BASE} extends uvm_object #(${2:parameters});",
+            "\t$3",
             "\t`uvm_object_param_utils($1);\n",
             "\tfunction new(string name = \"$1\");",
             "\t\tsuper.new(name);",
             "\tendfunction: new",
+            "\n",
             "\t$0",
             "endclass: $1\n"
         ],
@@ -37,10 +41,12 @@
         ],
         "body": [
             "class ${1:$TM_FILENAME_BASE} extends ${2:uvm_component};",
+            "\t$3",
             "\t`uvm_component_utils($1);\n",
             "\tfunction new(string name = \"$1\", uvm_component parent);",
             "\t\tsuper.new(name, parent);",
             "\tendfunction: new\n",
+            "\n",
             "\t$0",
             "endclass: $1\n"
         ],
@@ -54,10 +60,12 @@
         ],
         "body": [
             "class ${1:$TM_FILENAME_BASE} extends uvm_component #(${2:parameters}) ;",
+            "\t$3",
             "\t`uvm_component_param_utils($1);\n",
             "\tfunction new(string name = \"$1\", uvm_component parent);",
             "\t\tsuper.new(name, parent);",
             "\tendfunction: new\n",
+            "\n",
             "\t$0",
             "endclass: $1\n"
         ],
@@ -71,6 +79,7 @@
         ],
         "body": [
             "class ${1:$TM_FILENAME_BASE} extends ${2:uvm_sequence};",
+            "\t$3",
             "\t`uvm_object_utils($1);\n",
             "\tfunction new(string name = \"$1\");",
             "\t\tsuper.new(name);",
@@ -89,6 +98,7 @@
         ],
         "body": [
             "class ${1:$TM_FILENAME_BASE} extends uvm_sequence #(${2:parameters});",
+            "\t$3",
             "\t`uvm_object_param_utils($1);\n",
             "\tfunction new(string name = \"$1\");",
             "\t\tsuper.new(name);",
@@ -120,10 +130,12 @@
         ],
         "body": [
             "class ${1:$TM_FILENAME_BASE} extends ${2:uvm_sequence_item};",
+            "\t$3",
             "\t`uvm_object_utils($1);\n",
             "\tfunction new(string name = \"$1\");",
             "\t\tsuper.new(name);",
             "\tendfunction: new\n",
+            "\n",
             "\t$0",
             "endclass: $1\n\n"
         ],
@@ -137,10 +149,12 @@
         ],
         "body": [
             "class ${1:$TM_FILENAME_BASE} extends uvm_sequence_item #(${2:parameters}) ;",
+            "\t$3",
             "\t`uvm_object_param_utils($1);\n",
             "\tfunction new(string name = \"$1\");",
             "\t\tsuper.new(name);",
             "\tendfunction: new\n",
+            "\n",
             "\t$0",
             "endclass: $1\n\n"
         ],
@@ -356,10 +370,230 @@
         ],
         "description": "UVM env class template"
     },
+    "uvm_blocking_put_port": {
+        "prefix": "uvm_blocking_put_port",
+        "body": "uvm_blocking_put_port #(${1:parameter}) $2;",
+        "description": "uvm_blocking_put_port template"
+    },
+    "uvm_nonblocking_put_port": {
+        "prefix": "uvm_nonblocking_put_port",
+        "body": "uvm_nonblocking_put_port #(${1:parameter}) $2;",
+        "description": "uvm_nonblocking_put_port template"
+    },
+    "uvm_put_port": {
+        "prefix": "uvm_put_port",
+        "body": "uvm_put_port #(${1:parameter}) $2;",
+        "description": "uvm_put_port template"
+    },
     "uvm_blocking_get_port": {
         "prefix": "uvm_blocking_get_port",
         "body": "uvm_blocking_get_port #(${1:parameter}) $2;",
         "description": ""
+    },
+    "uvm_nonblocking_get_port": {
+        "prefix": "uvm_nonblocking_get_port",
+        "body": "uvm_nonblocking_get_port #(${1:parameter}) $2;",
+        "description": "uvm_nonblocking_get_port template"
+    },
+    "uvm_get_port": {
+        "prefix": "uvm_get_port",
+        "body": "uvm_get_port #(${1:parameter}) $2;",
+        "description": "uvm_get_port template"
+    },
+    "uvm_blocking_get_peek_port": {
+        "prefix": "uvm_blocking_get_peek_port",
+        "body": "uvm_blocking_get_peek_port #(${1:parameter}) $2;",
+        "description": ""
+    },
+    "uvm_nonblocking_get_peek_port": {
+        "prefix": "uvm_nonblocking_get_peek_port",
+        "body": "uvm_nonblocking_get_peek_port #(${1:parameter}) $2;",
+        "description": "uvm_nonblocking_get_peek_port template"
+    },
+    "uvm_get_peek_port": {
+        "prefix": "uvm_get_peek_port",
+        "body": "uvm_get_peek_port #(${1:parameter}) $2;",
+        "description": "uvm_get_peek_port template"
+    },
+    "uvm_blocking_peek_port": {
+        "prefix": "uvm_blocking_peek_port",
+        "body": "uvm_blocking_peek_port #(${1:parameter}) $2;",
+        "description": ""
+    },
+    "uvm_nonblocking_peek_port": {
+        "prefix": "uvm_nonblocking_peek_port",
+        "body": "uvm_nonblocking_peek_port #(${1:parameter}) $2;",
+        "description": "uvm_nonblocking_peek_port template"
+    },
+    "uvm_peek_port": {
+        "prefix": "uvm_peek_port",
+        "body": "uvm_peek_port #(${1:parameter}) $2;",
+        "description": "uvm_peek_port template"
+    },
+    "uvm_blocking_trasport_port": {
+        "prefix": "uvm_blocking_trasport_port",
+        "body": "uvm_blocking_trasport_port #(${1:parameter}) $2;",
+        "description": ""
+    },
+    "uvm_nonblocking_trasport_port": {
+        "prefix": "uvm_nonblocking_trasport_port",
+        "body": "uvm_nonblocking_trasport_port #(${1:parameter}) $2;",
+        "description": "uvm_nonblocking_trasport_port template"
+    },
+    "uvm_trasport_port": {
+        "prefix": "uvm_trasport_port",
+        "body": "uvm_trasport_port #(${1:parameter}) $2;",
+        "description": "uvm_trasport_port template"
+    },
+    "uvm_blocking_put_export": {
+        "prefix": "uvm_blocking_put_export",
+        "body": "uvm_blocking_put_export #(${1:parameter}) $2;",
+        "description": "uvm_blocking_put_export template"
+    },
+    "uvm_nonblocking_put_export": {
+        "prefix": "uvm_nonblocking_put_export",
+        "body": "uvm_nonblocking_put_export #(${1:parameter}) $2;",
+        "description": "uvm_nonblocking_put_export template"
+    },
+    "uvm_put_export": {
+        "prefix": "uvm_put_export",
+        "body": "uvm_put_export #(${1:parameter}) $2;",
+        "description": "uvm_put_export template"
+    },
+    "uvm_blocking_get_export": {
+        "prefix": "uvm_blocking_get_export",
+        "body": "uvm_blocking_get_export #(${1:parameter}) $2;",
+        "description": ""
+    },
+    "uvm_nonblocking_get_export": {
+        "prefix": "uvm_nonblocking_get_export",
+        "body": "uvm_nonblocking_get_export #(${1:parameter}) $2;",
+        "description": "uvm_nonblocking_get_export template"
+    },
+    "uvm_get_export": {
+        "prefix": "uvm_get_export",
+        "body": "uvm_get_export #(${1:parameter}) $2;",
+        "description": "uvm_get_export template"
+    },
+    "uvm_blocking_get_peek_export": {
+        "prefix": "uvm_blocking_get_peek_export",
+        "body": "uvm_blocking_get_peek_export #(${1:parameter}) $2;",
+        "description": ""
+    },
+    "uvm_nonblocking_get_peek_export": {
+        "prefix": "uvm_nonblocking_get_peek_export",
+        "body": "uvm_nonblocking_get_peek_export #(${1:parameter}) $2;",
+        "description": "uvm_nonblocking_get_peek_export template"
+    },
+    "uvm_get_peek_export": {
+        "prefix": "uvm_get_peek_export",
+        "body": "uvm_get_peek_export #(${1:parameter}) $2;",
+        "description": "uvm_get_peek_export template"
+    },
+    "uvm_blocking_peek_export": {
+        "prefix": "uvm_blocking_peek_export",
+        "body": "uvm_blocking_peek_export #(${1:parameter}) $2;",
+        "description": ""
+    },
+    "uvm_nonblocking_peek_export": {
+        "prefix": "uvm_nonblocking_peek_export",
+        "body": "uvm_nonblocking_peek_export #(${1:parameter}) $2;",
+        "description": "uvm_nonblocking_peek_export template"
+    },
+    "uvm_peek_export": {
+        "prefix": "uvm_peek_export",
+        "body": "uvm_peek_export #(${1:parameter}) $2;",
+        "description": "uvm_peek_export template"
+    },
+    "uvm_blocking_trasport_export": {
+        "prefix": "uvm_blocking_trasport_export",
+        "body": "uvm_blocking_trasport_export #(${1:parameter}) $2;",
+        "description": ""
+    },
+    "uvm_nonblocking_trasport_export": {
+        "prefix": "uvm_nonblocking_trasport_export",
+        "body": "uvm_nonblocking_trasport_export #(${1:parameter}) $2;",
+        "description": "uvm_nonblocking_trasport_export template"
+    },
+    "uvm_trasport_export": {
+        "prefix": "uvm_trasport_export",
+        "body": "uvm_trasport_export #(${1:parameter}) $2;",
+        "description": "uvm_trasport_export template"
+    },
+    "uvm_blocking_put_imp": {
+        "prefix": "uvm_blocking_put_imp",
+        "body": "uvm_blocking_put_imp #(${1:parameter}) $2;",
+        "description": "uvm_blocking_put_imp template"
+    },
+    "uvm_nonblocking_put_imp": {
+        "prefix": "uvm_nonblocking_put_imp",
+        "body": "uvm_nonblocking_put_imp #(${1:parameter}) $2;",
+        "description": "uvm_nonblocking_put_imp template"
+    },
+    "uvm_put_imp": {
+        "prefix": "uvm_put_imp",
+        "body": "uvm_put_imp #(${1:parameter}) $2;",
+        "description": "uvm_put_imp template"
+    },
+    "uvm_blocking_get_imp": {
+        "prefix": "uvm_blocking_get_imp",
+        "body": "uvm_blocking_get_imp #(${1:parameter}) $2;",
+        "description": ""
+    },
+    "uvm_nonblocking_get_imp": {
+        "prefix": "uvm_nonblocking_get_imp",
+        "body": "uvm_nonblocking_get_imp #(${1:parameter}) $2;",
+        "description": "uvm_nonblocking_get_imp template"
+    },
+    "uvm_get_imp": {
+        "prefix": "uvm_get_imp",
+        "body": "uvm_get_imp #(${1:parameter}) $2;",
+        "description": "uvm_get_imp template"
+    },
+    "uvm_blocking_get_peek_imp": {
+        "prefix": "uvm_blocking_get_peek_imp",
+        "body": "uvm_blocking_get_peek_imp #(${1:parameter}) $2;",
+        "description": ""
+    },
+    "uvm_nonblocking_get_peek_imp": {
+        "prefix": "uvm_nonblocking_get_peek_imp",
+        "body": "uvm_nonblocking_get_peek_imp #(${1:parameter}) $2;",
+        "description": "uvm_nonblocking_get_peek_imp template"
+    },
+    "uvm_get_peek_imp": {
+        "prefix": "uvm_get_peek_imp",
+        "body": "uvm_get_peek_imp #(${1:parameter}) $2;",
+        "description": "uvm_get_peek_imp template"
+    },
+    "uvm_blocking_peek_imp": {
+        "prefix": "uvm_blocking_peek_imp",
+        "body": "uvm_blocking_peek_imp #(${1:parameter}) $2;",
+        "description": ""
+    },
+    "uvm_nonblocking_peek_imp": {
+        "prefix": "uvm_nonblocking_peek_imp",
+        "body": "uvm_nonblocking_peek_imp #(${1:parameter}) $2;",
+        "description": "uvm_nonblocking_peek_imp template"
+    },
+    "uvm_peek_imp": {
+        "prefix": "uvm_peek_imp",
+        "body": "uvm_peek_imp #(${1:parameter}) $2;",
+        "description": "uvm_peek_imp template"
+    },
+    "uvm_blocking_trasport_imp": {
+        "prefix": "uvm_blocking_trasport_imp",
+        "body": "uvm_blocking_trasport_imp #(${1:parameter}) $2;",
+        "description": ""
+    },
+    "uvm_nonblocking_trasport_imp": {
+        "prefix": "uvm_nonblocking_trasport_imp",
+        "body": "uvm_nonblocking_trasport_imp #(${1:parameter}) $2;",
+        "description": "uvm_nonblocking_trasport_imp template"
+    },
+    "uvm_trasport_imp": {
+        "prefix": "uvm_trasport_imp",
+        "body": "uvm_trasport_imp #(${1:parameter}) $2;",
+        "description": "uvm_trasport_imp template"
     },
     "uvm_analysis_port": {
         "prefix": "uvm_analysis_port",
