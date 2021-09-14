@@ -1,94 +1,100 @@
 {
-    "name": "uvm-verfication-for-vs-code",
-    "displayName": "UVM Verfication for VS Code",
-    "description": "Snippets and syntax highlight for UVM",
-    "version": "1.0.0",
-    "icon": "icon.png",
-    "publisher": "xiaohuyz",
-    "engines": {
-        "vscode": "^1.57.0"
-    },
-    "license": "MIT",
-    "author": {
-        "name": "xiaohuyz",
-        "email": "xiaohuyz@163.com"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/xiaohuyz/uvm-verfication-for-vs-code"
-    },
-    "categories": [
-        "Programming Languages",
-        "Snippets"
-    ],
-    "keywords": [
-        "Hardware Verification Language",
-        "SystemVerilog",
-        "UVM Verfication"
-    ],
-    "contributes": {
-        "languages": [
-            {
-                "id": "systemverilog",
-                "aliases": [
-                    "SystemVerilog",
-                    "systemverilog"
-                ],
-                "extensions": [
-                    ".sv",
-                    ".svh"
-                ],
-                "configuration": "./language-configuration.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "systemverilog",
-                "scopeName": "source.sv",
-                "path": "./syntaxes/systemverilog.tmLanguage.json"
-            }
-        ],
-        "snippets": [
-            {
-                "language": "systemverilog",
-                "path": "./snippets/sv_containers.json"
-            },
-            {
-                "language": "systemverilog",
-                "path": "./snippets/sv_keywords.json"
-            },
-            {
-                "language": "systemverilog",
-                "path": "./snippets/sv_macros.json"
-            },
-            {
-                "language": "systemverilog",
-                "path": "./snippets/sv_language_constructs.json"
-            },
-            {
-                "language": "systemverilog",
-                "path": "./snippets/sv_language_methods.json"
-            },
-            {
-                "language": "systemverilog",
-                "path": "./snippets/uvm_containers.json"
-            },
-            {
-                "language": "systemverilog",
-                "path": "./snippets/uvm_macros.json"
-            },
-            {
-                "language": "systemverilog",
-                "path": "./snippets/uvm_phases.json"
-            },
-            {
-                "language": "systemverilog",
-                "path": "./snippets/uvm_keywords.json"
-            },
-            {
-                "language": "systemverilog",
-                "path": "./snippets/uvm_methods.json"
-            }
-        ]
-    }
+	"name": "uvm-verfication-for-vs-code",
+	"displayName": "UVM Verfication for VS Code",
+	"description": "Snippets and syntax highlight for UVM",
+	"version": "1.0.1",
+	"icon": "icon.png",
+	"publisher": "xiaohuyz",
+	"engines": {
+		"vscode": "^1.5.0"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "xiaohuyz",
+		"email": "xiaohuyz@163.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/xiaohuyz/uvm-verfication-for-vs-code"
+	},
+	"categories": [
+		"Programming Languages",
+		"Snippets"
+	],
+	"keywords": [
+		"Hardware Verification Language",
+		"SystemVerilog",
+		"UVM Verfication"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "systemverilog",
+				"aliases": [
+					"SystemVerilog",
+					"systemverilog"
+				],
+				"extensions": [
+					".sv",
+					".svh"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "systemverilog",
+				"scopeName": "source.sv",
+				"path": "./syntaxes/systemverilog.tmLanguage.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "systemverilog",
+				"path": "./snippets/sv_containers.json"
+			},
+			{
+				"language": "systemverilog",
+				"path": "./snippets/sv_keywords.json"
+			},
+			{
+				"language": "systemverilog",
+				"path": "./snippets/sv_macros.json"
+			},
+			{
+				"language": "systemverilog",
+				"path": "./snippets/sv_language_constructs.json"
+			},
+			{
+				"language": "systemverilog",
+				"path": "./snippets/sv_language_methods.json"
+			},
+			{
+				"language": "systemverilog",
+				"path": "./snippets/uvm_containers.json"
+			},
+			{
+				"language": "systemverilog",
+				"path": "./snippets/uvm_macros.json"
+			},
+			{
+				"language": "systemverilog",
+				"path": "./snippets/uvm_phases.json"
+			},
+			{
+				"language": "systemverilog",
+				"path": "./snippets/uvm_keywords.json"
+			},
+			{
+				"language": "systemverilog",
+				"path": "./snippets/uvm_methods.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "f1467b74-f9ac-4d14-a10f-0147c2d09587",
+		"publisherId": "cdaea268-95f3-49f8-a729-8bcf69625be4",
+		"publisherDisplayName": "xiaohuyz",
+		"installedTimestamp": 1629819461476
+	}
 }

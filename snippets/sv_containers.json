@@ -45,6 +45,18 @@
         ],
         "description": "SV class template"
     },
+    "sv_class_entends": {
+        "prefix": "sv_class_entends",
+        "body": [
+            "class ${1:$TM_FILENAME_BASE} extends ${2:base class};",
+            "\tfunction new(string name = \"$1\");",
+            "\t\tsuper.new(\"$1\");",
+            "\tendfunction: new",
+            "\t$0\n",
+            "endclass: $1\n"
+        ],
+        "description": "SV class extends template"
+    },
     "sv_typedef": {
         "prefix": "sv_typedef",
         "body": [

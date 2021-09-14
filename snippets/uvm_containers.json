@@ -148,7 +148,8 @@
             "source.systemverilog"
         ],
         "body": [
-            "class ${1:$TM_FILENAME_BASE} extends uvm_sequence_item #(${2:parameters}) ;",
+            "//一定注意参数化transaction的引用方法！",
+            "class ${1:$TM_FILENAME_BASE} #(${2:parameters}) extends uvm_sequence_item #(${2:parameters}) ;",
             "\t$3",
             "\t`uvm_object_param_utils($1);\n",
             "\tfunction new(string name = \"$1\");",
@@ -313,7 +314,7 @@
     "uvm_sequencer": {
         "prefix": "uvm_sequencer",
         "body": [
-            "class ${1:$TM_FILENAME_BASE} #(${2:parameters}) extends uvm_sequencer;",
+            "class ${1:$TM_FILENAME_BASE} extends uvm_sequencer #(${2:parameters});",
             "\t$3",
             "\t",
             "\t`uvm_component_utils(${1:$TM_FILENAME_BASE});\n",
@@ -598,6 +599,16 @@
     "uvm_analysis_port": {
         "prefix": "uvm_analysis_port",
         "body": "uvm_analysis_port #(${1:parameter}) $2;",
+        "description": ""
+    },
+    "uvm_analysis_export": {
+        "prefix": "uvm_analysis_export",
+        "body": "uvm_analysis_export #(${1:parameter}) $2;",
+        "description": ""
+    },
+    "uvm_analysis_imp": {
+        "prefix": "uvm_analysis_imp",
+        "body": "uvm_analysis_imp #(${1:parameter}) $2;",
         "description": ""
     },
     "uvm_tlm_analysis_fifo": {

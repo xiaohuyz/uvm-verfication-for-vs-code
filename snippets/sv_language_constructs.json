@@ -30,8 +30,8 @@
     "prefix": "repeat",
     "body": [
       "repeat (${1:times}) begin",
-      "\t$1",
-      "end $2"
+      "\t$2",
+      "end $3"
     ],
     "description": "repeat (...) begin ... end"
   },
