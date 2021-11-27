@@ -2,7 +2,7 @@
 	"name": "uvm-verfication-for-vs-code",
 	"displayName": "UVM Verfication for VS Code",
 	"description": "Snippets and syntax highlight for UVM",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"icon": "icon.png",
 	"publisher": "xiaohuyz",
 	"engines": {
@@ -32,7 +32,9 @@
 				"id": "systemverilog",
 				"aliases": [
 					"SystemVerilog",
-					"systemverilog"
+					"systemverilog",
+					"SV",
+					"sv"
 				],
 				"extensions": [
 					".sv",
