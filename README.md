@@ -1,6 +1,8 @@
 # UVM Verfication for VS Code README
 THE EXTENSION IS A MOD OF THE EXTENSION sv-1800-2012 (https://github.com/gvekony/sv-1800-2012)
+
 I only made some changes to the snippets and add some highlights.
+
 thanks to gvekony.
 # Features
 
